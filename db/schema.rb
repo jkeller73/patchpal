@@ -10,10 +10,91 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_123623) do
+ActiveRecord::Schema.define(version: 2019_11_25_154001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_weather_reports", force: :cascade do |t|
+    t.date "date"
+    t.text "description"
+    t.float "temperature"
+    t.bigint "patch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patch_id"], name: "index_daily_weather_reports_on_patch_id"
+  end
+
+  create_table "harvest_months", force: :cascade do |t|
+    t.string "jan"
+    t.string "feb"
+    t.string "mar"
+    t.string "apr"
+    t.string "may"
+    t.string "jun"
+    t.string "jul"
+    t.string "aug"
+    t.string "sept"
+    t.string "oct"
+    t.string "nov"
+    t.string "dec"
+    t.bigint "plant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plant_id"], name: "index_harvest_months_on_plant_id"
+  end
+
+  create_table "patch_plants", force: :cascade do |t|
+    t.date "plant_date"
+    t.date "harvest_date"
+    t.bigint "plant_id"
+    t.bigint "patch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patch_id"], name: "index_patch_plants_on_patch_id"
+    t.index ["plant_id"], name: "index_patch_plants_on_plant_id"
+  end
+
+  create_table "patches", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "longitude"
+    t.float "latitude"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_patches_on_user_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "hardiness"
+    t.string "position_in"
+    t.text "sowing"
+    t.text "more_info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sowing_months", force: :cascade do |t|
+    t.string "jan"
+    t.string "feb"
+    t.string "mar"
+    t.string "apr"
+    t.string "may"
+    t.string "jun"
+    t.string "jul"
+    t.string "aug"
+    t.string "sept"
+    t.string "oct"
+    t.string "nov"
+    t.string "dec"
+    t.bigint "plant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plant_id"], name: "index_sowing_months_on_plant_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +104,16 @@ ActiveRecord::Schema.define(version: 2019_11_25_123623) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "daily_weather_reports", "patches"
+  add_foreign_key "harvest_months", "plants"
+  add_foreign_key "patch_plants", "patches"
+  add_foreign_key "patch_plants", "plants"
+  add_foreign_key "patches", "users"
+  add_foreign_key "sowing_months", "plants"
 end
