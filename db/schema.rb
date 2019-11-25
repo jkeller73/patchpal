@@ -26,18 +26,18 @@ ActiveRecord::Schema.define(version: 2019_11_25_154001) do
   end
 
   create_table "harvest_months", force: :cascade do |t|
-    t.string "jan"
-    t.string "feb"
-    t.string "mar"
-    t.string "apr"
-    t.string "may"
-    t.string "jun"
-    t.string "jul"
-    t.string "aug"
-    t.string "sept"
-    t.string "oct"
-    t.string "nov"
-    t.string "dec"
+    t.boolean "jan"
+    t.boolean "feb"
+    t.boolean "mar"
+    t.boolean "apr"
+    t.boolean "may"
+    t.boolean "jun"
+    t.boolean "jul"
+    t.boolean "aug"
+    t.boolean "sept"
+    t.boolean "oct"
+    t.boolean "nov"
+    t.boolean "dec"
     t.bigint "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,18 +78,18 @@ ActiveRecord::Schema.define(version: 2019_11_25_154001) do
   end
 
   create_table "sowing_months", force: :cascade do |t|
-    t.string "jan"
-    t.string "feb"
-    t.string "mar"
-    t.string "apr"
-    t.string "may"
-    t.string "jun"
-    t.string "jul"
-    t.string "aug"
-    t.string "sept"
-    t.string "oct"
-    t.string "nov"
-    t.string "dec"
+    t.boolean "jan"
+    t.boolean "feb"
+    t.boolean "mar"
+    t.boolean "apr"
+    t.boolean "may"
+    t.boolean "jun"
+    t.boolean "jul"
+    t.boolean "aug"
+    t.boolean "sept"
+    t.boolean "oct"
+    t.boolean "nov"
+    t.boolean "dec"
     t.bigint "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
