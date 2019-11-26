@@ -1,7 +1,7 @@
 class Plant < ApplicationRecord
   has_many :patches, through: :patch_plant
-  has_many :sowing_months, dependent: :destroy
-  has_many :harvest_months, dependent: :destroy
+  has_one :sowing_month, dependent: :destroy
+  has_one :harvest_month, dependent: :destroy
   # validates :name, presence: true
   validates :description, presence: true
   validates :hardiness, presence: true
