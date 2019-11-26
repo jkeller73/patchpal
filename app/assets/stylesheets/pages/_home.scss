@@ -17,6 +17,7 @@ h3 {
 
 h5 {
   font-family: $body-font;
+  letter-spacing: 0.05em;
 }
 
 .banner {
@@ -33,7 +34,7 @@ h5 {
 .inspire-container {
   background-color: white;
   height: 30em;
-  padding-right: 1em;
+  padding-right: 4em;
   position: relative;
   text-align: right;
   flex-direction: column;
@@ -50,7 +51,6 @@ h5 {
   }
   h5 {
     color: $light-gray;
-    letter-spacing: 0.05em;
   }
   .fa-seedling {
     position: absolute;
@@ -70,19 +70,46 @@ h5 {
 }
 
 .time-container {
-  .time-content {
     height: 30em;
     background-color: $green;
     padding-top: 10%;
-  }
+    padding-left: 4em;
   h2 {
-    background-image: linear-gradient(to bottom, rgb(255,255,255), rgb(255,255,255));
+    background-image: linear-gradient(to bottom, rgb(232, 247, 225), rgb(232, 247, 225));
     color: $green;
+  }
+  h5 {
+    color: white;
   }
   .time-header {
     width: 35%;
   }
 }
+
+.track-container {
+  height: 30em;
+  background-color: $yellow;
+  padding-right: 4em;
+  position: relative;
+  text-align: right;
+  flex-direction: column;
+  padding-top: 10%;
+  padding-right: 5%;
+  h2 {
+    color: $green;
+  }
+  h5 {
+    color: white;
+  }
+  .fa-calendar-check {
+    position: absolute;
+    bottom: 5%;
+    left: 150px;
+    color: $dark-gray;
+    font-size: 370px;
+  }
+}
+
 
 
 
