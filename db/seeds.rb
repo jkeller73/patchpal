@@ -60,19 +60,6 @@ array.each do |url|
     months_harvest << element.text.strip
   end
 
-
-  # p months_harvest
-  # hm = HarvestMonth.new(plant: plant)
-  # p hm
-  # months_harvest.each do |month|
-  #   # month_hash[month] = true
-  #   hm.instance_variable_set(("@" + month.downcase).to_sym, true)
-  # end
-
-  # p hm
-  # hm.save
-
-  # p months_harvest
   month_hash = {
     :jan => false,
     :feb => false,
@@ -88,15 +75,13 @@ array.each do |url|
     :dec => false
   }
 
-  # sowing_month = SowingMonth.new()
-  puts 'new plant'
   months_sowing.each do |month|
     month_hash[month.downcase.to_sym] = true
   end
 
   month_hash[:plant] = plant
 
-  p SowingMonth.create!(month_hash)
+  SowingMonth.create!(month_hash)
 
   har_month_hash = {
     :jan => false,
@@ -113,7 +98,6 @@ array.each do |url|
     :dec => false
   }
 
-  # sowing_month = SowingMonth.new()
   puts 'new plant'
   months_harvest.each do |month|
     har_month_hash[month.downcase.to_sym] = true
@@ -121,76 +105,5 @@ array.each do |url|
 
   har_month_hash[:plant] = plant
 
-  p HarvestMonth.create!(har_month_hash)
-
-  # sowing_month.save
-  #p sowing_month
-
-
-  # sowing_month = SowingMonth.new()
-  # puts "new plant"
-  # p months_sowing
-  # months_sowing.each do |month_abr|
-  #   p month_abr
-  #   if month_abr == 'JAN'
-  #     sowing_month.jan = true
-  #   elsif 'FEB'
-  #     sowing_month.feb = true
-  #     p sowing_month
-  #   elsif 'MAR'
-  #     puts "here"
-  #     sowing_month.mar = true
-  #   elsif 'APR'
-  #     sowing_month.apr = true
-  #   elsif 'MAY'
-  #     sowing_month.may = true
-  #   elsif 'JUN'
-  #     sowing_month.jun = true
-  #   elsif 'JUL'
-  #     sowing_month.jul = true
-  #   elsif 'AUG'
-  #     sowing_month.aug = true
-  #   elsif 'SEPT'
-  #     sowing_month.sept = true
-  #   elsif 'OCT'
-  #     sowing_month.oct = true
-  #   elsif 'NOV'
-  #     sowing_month.nov = true
-  #   elsif 'DEC'
-  #     sowing_month.dec = true
-  #   end
-  # end
-  # sowing_month.plant = plant
-  # sowing_month.save
-
-#   harvest_month = HarvestMonth.new()
-#   months_harvest.each do |month_abr|
-#     if month_abr == 'JAN'
-#       harvest_month.jan = true
-#     elsif 'FEB'
-#       harvest_month.feb = true
-#     elsif 'MAR'
-#       harvest_month.mar = true
-#     elsif 'APR'
-#       harvest_month.apr = true
-#     elsif 'MAY'
-#       harvest_month.may = true
-#     elsif 'JUN'
-#       harvest_month.jun = true
-#     elsif 'JUL'
-#       harvest_month.jul = true
-#     elsif 'AUG'
-#       harvest_month.aug = true
-#     elsif 'SEPT'
-#       harvest_month.sept = true
-#     elsif 'OCT'
-#       harvest_month.oct = true
-#     elsif 'NOV'
-#       harvest_month.nov = true
-#     elsif 'DEC'
-#       harvest_month.dec = true
-#     end
-#   end
-#   harvest_month.plant = plant
-#   harvest_month.save
+  HarvestMonth.create!(har_month_hash)
 end
