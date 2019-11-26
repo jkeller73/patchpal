@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_154001) do
+ActiveRecord::Schema.define(version: 2019_11_26_152454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,21 +26,21 @@ ActiveRecord::Schema.define(version: 2019_11_25_154001) do
   end
 
   create_table "harvest_months", force: :cascade do |t|
-    t.boolean "jan"
-    t.boolean "feb"
-    t.boolean "mar"
-    t.boolean "apr"
-    t.boolean "may"
-    t.boolean "jun"
-    t.boolean "jul"
-    t.boolean "aug"
-    t.boolean "sept"
-    t.boolean "oct"
-    t.boolean "nov"
-    t.boolean "dec"
+    t.boolean "jan", default: false
+    t.boolean "feb", default: false
+    t.boolean "mar", default: false
+    t.boolean "apr", default: false
+    t.boolean "may", default: false
+    t.boolean "jun", default: false
+    t.boolean "jul", default: false
+    t.boolean "aug", default: false
+    t.boolean "oct", default: false
+    t.boolean "nov", default: false
+    t.boolean "dec", default: false
     t.bigint "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "sep"
     t.index ["plant_id"], name: "index_harvest_months_on_plant_id"
   end
 
@@ -75,24 +75,25 @@ ActiveRecord::Schema.define(version: 2019_11_25_154001) do
     t.text "more_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "sowing_months", force: :cascade do |t|
-    t.boolean "jan"
-    t.boolean "feb"
-    t.boolean "mar"
-    t.boolean "apr"
-    t.boolean "may"
-    t.boolean "jun"
-    t.boolean "jul"
-    t.boolean "aug"
-    t.boolean "sept"
-    t.boolean "oct"
-    t.boolean "nov"
-    t.boolean "dec"
+    t.boolean "jan", default: false
+    t.boolean "feb", default: false
+    t.boolean "mar", default: false
+    t.boolean "apr", default: false
+    t.boolean "may", default: false
+    t.boolean "jun", default: false
+    t.boolean "jul", default: false
+    t.boolean "aug", default: false
+    t.boolean "oct", default: false
+    t.boolean "nov", default: false
+    t.boolean "dec", default: false
     t.bigint "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "sep"
     t.index ["plant_id"], name: "index_sowing_months_on_plant_id"
   end
 
