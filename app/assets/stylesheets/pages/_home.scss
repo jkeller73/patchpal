@@ -7,7 +7,6 @@ h1 {
 
 h2 {
   font-family: $headers-font;
-  // color: white;
 }
 
 h3 {
@@ -27,19 +26,19 @@ h3 {
   }
 }
 
-.info-container {
+.inspire-container {
   background-color: white;
   height: 35em;
-}
-
-.info-content {
-  float: right;
-  text-align: right;
-}
-
-.span {
-  h2 {
-    background-color: $green;
+  .inspire-content {
+    float: right;
+    text-align: right;
   }
+  h2 {
+    background-image: linear-gradient(to bottom, rgb(158, 201, 139), rgb(158, 201, 139));
+    padding-left: 0px;
+  }
+
 }
+
+
 
