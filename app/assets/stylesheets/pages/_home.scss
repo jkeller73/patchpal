@@ -1,1 +1,45 @@
 // Specific CSS for your home-page
+h1 {
+  font-family: $headers-font;
+  font-size: 100px;
+  color: white;
+}
+
+h2 {
+  font-family: $headers-font;
+  // color: white;
+}
+
+h3 {
+  font-family: $body-font;
+  color: white;
+}
+
+.banner {
+  background-image: url("https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+  height: 100vh;
+  .banner-content {
+    // display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10%;
+  }
+}
+
+.info-container {
+  background-color: white;
+  height: 35em;
+}
+
+.info-content {
+  float: right;
+  text-align: right;
+}
+
+.span {
+  h2 {
+    background-color: $green;
+  }
+}
+

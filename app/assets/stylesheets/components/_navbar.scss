@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $navbar-gray;
+  h1 {
+    font-family: $headers-font;
+    color: $green;
+    font-size: 50px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,3 +15,5 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
