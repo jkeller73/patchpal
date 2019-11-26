@@ -7,11 +7,16 @@ h1 {
 
 h2 {
   font-family: $headers-font;
+  font-size: 50px
 }
 
 h3 {
   font-family: $body-font;
   color: white;
+}
+
+h5 {
+  font-family: $body-font;
 }
 
 .banner {
@@ -29,15 +34,28 @@ h3 {
 .inspire-container {
   background-color: white;
   height: 35em;
+  padding-right: 1em;
+  position: relative;
   .inspire-content {
     float: right;
     text-align: right;
+    padding-top: 10%;
   }
   h2 {
     background-image: linear-gradient(to bottom, rgb(158, 201, 139), rgb(158, 201, 139));
     padding-left: 0px;
+    color: white;
   }
-
+  h5 {
+    color: $light-gray;
+    letter-spacing: 0.05em;
+  }
+  .fa-seedling {
+    font-size: 250px;
+    position: absolute;
+    bottom: -25px;
+    color: $green;
+  }
 }
 
 
