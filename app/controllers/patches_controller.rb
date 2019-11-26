@@ -43,7 +43,7 @@ class PatchesController < ApplicationController
     @patch = Patch.find(params[:id])
   end
 
-  def  patch_params
+  def patch_params
     params.require(:patch).permit(:address)
   end
 end
