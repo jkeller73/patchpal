@@ -3,5 +3,194 @@
 #
 # Examples:
 #
+Plant.destroy_all
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+vegetable_suffixes = ['tomato-supersweet/txz61714TM', 'carrot-mokum-f1-hybrid/760TM', 'parsnip-white-gem/tst00985TM', 'leek-nipper/tt01093TM', 'onion-supasweettrade-dulcinea-f1-hybrid/997TM', 'onion-red-baron/825TM',
+'courgette-all-green-bush/554TM', 'pumpkin-jack-of-all-trades/630TM', 'squash-avalon-f1-hybrid-winter/951TM',
+'broccoli-spiridon-f1-hybrid-calabrese/4782TM', 'brussels-sprout-bosworth-f1-hybrid/696TM', 'cabbage-brigadier-f1-hybrid-autumnwinter/83TM',
+'kale-midnight-sun/tm60213TM', 'swiss-chard-fantasy/gww4969TM', 'beetroot-kestrel-f1-hybrid-globe/534TM',
+'sweet-pepper-gourmet/62TM', 'chilli-pepper-hot-thai/tm75329TM','pea-ceresa-petit-pois/gww4786TM',
+'broad-bean-jubilee-hysor/802TM','parsley-laura/862TM', 'basil-christmas/4886TM', 'coriander/481TM',
+'lettuce-sweet-success-icebergromaine/TT50586TM', 'radish-mars-f1-hybrid/tr54728TM', 'cucumber-diva/TT52081TM']
+
+array = []
+vegetable_suffixes.each do |suffix|
+  # Description Tab
+  # Vegetable.create(scrape(suffix))
+  url = "https://www.thompson-morgan.com/p/#{suffix}"
+  array << url
+end
+
+# def scrape(suffix)
+array.each do |url|
+  description = ''
+  hardiness = ''
+  position_in = ''
+  html_file = open(url).read
+  html_doc = Nokogiri::HTML(html_file)
+  results = {}
+  months_sowing = []
+  months_harvest = []
+  html_doc.search('#description').each do |element|
+    description = element.search('.description').text.strip
+    hardiness = element.search("label:contains('Hardiness') + span").text.strip
+    position_in = element.search("label:contains('Position In') + span").text.strip
+    results = {
+      description: description,
+      hardiness: hardiness,
+      position_in: position_in
+    }
+  end
+  html_doc.search('#sowing').each do |element|
+    results[:sowing] = element.text.strip
+  end
+  html_doc.search('#info').each do |element|
+    results[:more_info] = element.text.strip
+  end
+
+  results[:photo] = html_doc.search('.mainImage img').first['data-src']
+  plant = Plant.create!(results)
+
+
+  html_doc.search('.periods .sowing').each do |element|
+    months_sowing << element.text.strip
+  end
+  html_doc.search('.periods .harvest').each do |element|
+    months_harvest << element.text.strip
+  end
+
+
+  # p months_harvest
+  # hm = HarvestMonth.new(plant: plant)
+  # p hm
+  # months_harvest.each do |month|
+  #   # month_hash[month] = true
+  #   hm.instance_variable_set(("@" + month.downcase).to_sym, true)
+  # end
+
+  # p hm
+  # hm.save
+
+  # p months_harvest
+  month_hash = {
+    :jan => false,
+    :feb => false,
+    :mar => false,
+    :apr => false,
+    :may => false,
+    :jun => false,
+    :jul => false,
+    :aug => false,
+    :sep => false,
+    :oct => false,
+    :nov => false,
+    :dec => false
+  }
+
+  # sowing_month = SowingMonth.new()
+  puts 'new plant'
+  months_sowing.each do |month|
+    month_hash[month.downcase.to_sym] = true
+  end
+
+  month_hash[:plant] = plant
+
+  p SowingMonth.create!(month_hash)
+
+  har_month_hash = {
+    :jan => false,
+    :feb => false,
+    :mar => false,
+    :apr => false,
+    :may => false,
+    :jun => false,
+    :jul => false,
+    :aug => false,
+    :sep => false,
+    :oct => false,
+    :nov => false,
+    :dec => false
+  }
+
+  # sowing_month = SowingMonth.new()
+  puts 'new plant'
+  months_harvest.each do |month|
+    har_month_hash[month.downcase.to_sym] = true
+  end
+
+  har_month_hash[:plant] = plant
+
+  p HarvestMonth.create!(har_month_hash)
+
+  # sowing_month.save
+  #p sowing_month
+
+
+  # sowing_month = SowingMonth.new()
+  # puts "new plant"
+  # p months_sowing
+  # months_sowing.each do |month_abr|
+  #   p month_abr
+  #   if month_abr == 'JAN'
+  #     sowing_month.jan = true
+  #   elsif 'FEB'
+  #     sowing_month.feb = true
+  #     p sowing_month
+  #   elsif 'MAR'
+  #     puts "here"
+  #     sowing_month.mar = true
+  #   elsif 'APR'
+  #     sowing_month.apr = true
+  #   elsif 'MAY'
+  #     sowing_month.may = true
+  #   elsif 'JUN'
+  #     sowing_month.jun = true
+  #   elsif 'JUL'
+  #     sowing_month.jul = true
+  #   elsif 'AUG'
+  #     sowing_month.aug = true
+  #   elsif 'SEPT'
+  #     sowing_month.sept = true
+  #   elsif 'OCT'
+  #     sowing_month.oct = true
+  #   elsif 'NOV'
+  #     sowing_month.nov = true
+  #   elsif 'DEC'
+  #     sowing_month.dec = true
+  #   end
+  # end
+  # sowing_month.plant = plant
+  # sowing_month.save
+
+#   harvest_month = HarvestMonth.new()
+#   months_harvest.each do |month_abr|
+#     if month_abr == 'JAN'
+#       harvest_month.jan = true
+#     elsif 'FEB'
+#       harvest_month.feb = true
+#     elsif 'MAR'
+#       harvest_month.mar = true
+#     elsif 'APR'
+#       harvest_month.apr = true
+#     elsif 'MAY'
+#       harvest_month.may = true
+#     elsif 'JUN'
+#       harvest_month.jun = true
+#     elsif 'JUL'
+#       harvest_month.jul = true
+#     elsif 'AUG'
+#       harvest_month.aug = true
+#     elsif 'SEPT'
+#       harvest_month.sept = true
+#     elsif 'OCT'
+#       harvest_month.oct = true
+#     elsif 'NOV'
+#       harvest_month.nov = true
+#     elsif 'DEC'
+#       harvest_month.dec = true
+#     end
+#   end
+#   harvest_month.plant = plant
+#   harvest_month.save
+end

@@ -12,4 +12,8 @@ class SowingMonth < ApplicationRecord
   # validates :oct
   # validates :nov
   # validates :dec
+
+  def all_months
+    [jan, feb, mar, apr, may, jun, jul, aug, sept, oct, nov, dec]
+  end
 end
