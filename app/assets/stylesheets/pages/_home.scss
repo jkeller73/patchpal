@@ -24,7 +24,6 @@ h5 {
   background-size: cover;
   height: 100vh;
   .banner-content {
-    // display: flex;
     justify-content: center;
     text-align: center;
     padding-top: 10%;
@@ -33,13 +32,16 @@ h5 {
 
 .inspire-container {
   background-color: white;
-  height: 35em;
+  height: 30em;
   padding-right: 1em;
   position: relative;
-  .inspire-content {
+  text-align: right;
+  flex-direction: column;
+  padding-top: 10%;
+  padding-right: 5%;
+  .inspire-text {
     float: right;
     text-align: right;
-    padding-top: 10%;
   }
   h2 {
     background-image: linear-gradient(to bottom, rgb(158, 201, 139), rgb(158, 201, 139));
@@ -51,10 +53,34 @@ h5 {
     letter-spacing: 0.05em;
   }
   .fa-seedling {
-    font-size: 250px;
     position: absolute;
-    bottom: -25px;
+    bottom: -35px;
+    left: 150px;
     color: $green;
+    font-size: 370px;
+  }
+  .inspire-header {
+    width: 25%;
+    text-align: right;
+    float: right;
+    justify-content: right;
+    margin-right: 0;
+    margin-left: 75%;
+  }
+}
+
+.time-container {
+  .time-content {
+    height: 30em;
+    background-color: $green;
+    padding-top: 10%;
+  }
+  h2 {
+    background-image: linear-gradient(to bottom, rgb(255,255,255), rgb(255,255,255));
+    color: $green;
+  }
+  .time-header {
+    width: 35%;
   }
 }
 
