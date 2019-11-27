@@ -3,6 +3,7 @@ class Patch < ApplicationRecord
   has_many :patch_plants, dependent: :destroy
   has_many :plants, through: :patch_plant
   has_many :daily_weather_reports
+  has_many :alerts, through: :patch_plants
   validates :name, presence: true
   validates :address, presence: true
   geocoded_by :address

@@ -3,3 +3,8 @@
 <br>
 <%= @patch.name %>
 <%= @patch.address %>
+
+<% @alerts.each do |alert| %>
+  <p><%= alert.message %></p>
+  <%= link_to "complete", complete_alert_path(alert), method: :patch %>
+<% end %>

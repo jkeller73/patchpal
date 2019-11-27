@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :patch_plants, only: [:create, :destroy]
   end
   devise_for :users
+  patch "alerts/:id", to: "alerts#complete", as: :complete_alert
 end
