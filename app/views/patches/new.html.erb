@@ -1,1 +1,7 @@
 <h1>hello</h1>
+
+<%= simple_form_for(@patch) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.button :submit %>
+<% end %>

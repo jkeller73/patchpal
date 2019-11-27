@@ -9,6 +9,10 @@ class PatchPolicy < ApplicationPolicy
     @patches = policy_scope(Patch)
   end
 
+  def show?
+    true
+  end
+
   def create?
     true
   end

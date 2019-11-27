@@ -60,6 +60,7 @@ class PatchesController < ApplicationController
 
   def find_patch
     @patch = Patch.find(params[:id])
+    authorize @patch
   end
 
   def patch_params
