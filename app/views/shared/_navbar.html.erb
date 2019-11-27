@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 10vh;">
   <%= link_to "#", class: "navbar-brand" do %>
     <h1>P</h1>
     <% end %>
@@ -27,7 +27,13 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "SIGN-UP", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item" style="padding-right: 2vw;">
+          <%= link_to "LOGIN", new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= image_tag asset_url('apple.png'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </li>
       <% end %>
     </ul>

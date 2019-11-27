@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @patches = curren_user.patches
+    @patches = current_user.patches
   end
 end
