@@ -32,8 +32,8 @@ class PatchesController < ApplicationController
 
   def create
     @patch = Patch.new(patch_params)
-    authorize @patch
     @patch.user = current_user
+    authorize @patch
 
     if @patch.save
       redirect_to patch_path(@patch)
