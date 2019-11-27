@@ -1,6 +1,7 @@
 class PatchPlant < ApplicationRecord
   belongs_to :plant
   belongs_to :patch
+  has_many :alerts
 
   def check_patch_plant_harvest
     month = Time.now.strftime("%B").downcase.first(3).to_sym
