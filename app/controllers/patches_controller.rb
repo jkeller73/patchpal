@@ -8,7 +8,8 @@ class PatchesController < ApplicationController
 
   def show
     location_and_weather
-    @alerts = create_alerts
+    create_alerts
+    @alerts = alerts.where(dealt: false)
   end
 
   def new
