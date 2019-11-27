@@ -3,7 +3,8 @@ class PatchesController < ApplicationController
   before_action :find_patch, only: [:show, :edit, :update, :destroy]
 
   def index
-    @patches = Patch.all
+    # @patches = Patch.all
+    @patches = policy_scope(Patch)
   end
 
   def show
@@ -23,15 +24,18 @@ class PatchesController < ApplicationController
       @today = days_array[0]['weather'][0]['description']
       @temperature = (days_array[0]['main']['temp'] - 273.15).round
     end
+    authorize @patch
   end
 
   def new
     @patch = Patch.new
+    authorize @patch
   end
 
   def create
     @patch = Patch.new(patch_params)
     @patch.user = current_user
+    authorize @patch
 
     if @patch.save
       redirect_to patch_path(@patch)
@@ -50,6 +54,7 @@ class PatchesController < ApplicationController
 
   def destroy
     @patch.destroy
+    authorize @patch
     redirect_to patches_path
   end
 
@@ -57,9 +62,10 @@ class PatchesController < ApplicationController
 
   def find_patch
     @patch = Patch.find(params[:id])
+    authorize @patch
   end
 
   def patch_params
-    params.require(:patch).permit(:address)
+    params.require(:patch).permit(:name, :address)
   end
 end
