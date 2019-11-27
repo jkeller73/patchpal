@@ -50,8 +50,8 @@ class PatchesController < ApplicationController
 
   def create_alerts
     @patch.patch_plants.each(&:check_patch_plant_harvest)
+    @patch.patch_plants.each(&:check_patch_plant_sowing)
   end
-
 
   def find_patch
     @patch = Patch.find(params[:id])
