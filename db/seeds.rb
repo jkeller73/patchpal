@@ -3,6 +3,7 @@
 #
 # Examples:
 #
+require "pry"
 Plant.destroy_all
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first) 
@@ -40,7 +41,8 @@ array.each do |url|
     results = {
       description: description,
       hardiness: hardiness,
-      position_in: position_in
+      position_in: position_in,
+      name: url.split("/p/").last.split("-").first
     }
   end
   html_doc.search('#sowing').each do |element|
