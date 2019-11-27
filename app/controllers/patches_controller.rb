@@ -27,10 +27,12 @@ class PatchesController < ApplicationController
 
   def new
     @patch = Patch.new
+    authorize @patch
   end
 
   def create
     @patch = Patch.new(patch_params)
+    authorize @patch
     @patch.user = current_user
 
     if @patch.save
@@ -50,6 +52,7 @@ class PatchesController < ApplicationController
 
   def destroy
     @patch.destroy
+    authorize @patch
     redirect_to patches_path
   end
 
