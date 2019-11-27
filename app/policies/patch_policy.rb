@@ -18,18 +18,18 @@ class PatchPolicy < ApplicationPolicy
   end
 
   def update?
-    current_user?
+    user_is_owner?
     # record.user == user
   end
 
   def destroy?
-    current_user?
+    user_is_owner?
     # record.user == user
   end
 
   private
 
-  def current_user?
+  def user_is_owner?
     record.user == user
   end
 
