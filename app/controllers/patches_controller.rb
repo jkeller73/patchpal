@@ -64,6 +64,6 @@ class PatchesController < ApplicationController
   end
 
   def patch_params
-    params.require(:patch).permit(:address)
+    params.require(:patch).permit(:name, :address)
   end
 end
