@@ -1,0 +1,9 @@
+<h1>All the plants</h1>
+<% @plants.each do |plant| %>
+  <h2><%= plant.name %></h2>
+  <p><%= plant.description %></p>
+  <p>Hardiness: <%= plant.hardiness %></p>
+  <p>Position in: <%= plant.position_in %></p>
+  <p><%= plant.sowing %></p>
+  <p><%= plant.more_info %></p>
+<% end %>
