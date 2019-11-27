@@ -9,4 +9,6 @@ class Plant < ApplicationRecord
   validates :sowing, presence: true
   # validates :more_info, presence: true
   validates :photo, presence: true
+
+
 end

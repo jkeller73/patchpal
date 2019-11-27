@@ -3,10 +3,14 @@
 #
 # Examples:
 #
-require "pry"
+HarvestMonth.destroy_all
+PatchPlant.destroy_all
+Patch.destroy_all
+User.destroy_all
 Plant.destroy_all
+
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first) 
+#   Character.create(name: 'Luke', movie: movies.first)
 
 vegetable_suffixes = ['tomato-supersweet/txz61714TM', 'carrot-mokum-f1-hybrid/760TM', 'parsnip-white-gem/tst00985TM', 'leek-nipper/tt01093TM', 'onion-supasweettrade-dulcinea-f1-hybrid/997TM', 'onion-red-baron/825TM',
 'courgette-all-green-bush/554TM', 'pumpkin-jack-of-all-trades/630TM', 'squash-avalon-f1-hybrid-winter/951TM',
@@ -110,3 +114,27 @@ array.each do |url|
 
   HarvestMonth.create!(har_month_hash)
 end
+
+
+u = User.create!(first_name: 'me', last_name: 'Something', email: 'me@gmail.com', password: '123456')
+pat = Patch.create!(name: 'patch1', address: 'SE5 9EF', user: u)
+10.times { PatchPlant.create!(patch: pat, plant: Plant.all.sample)}
+hm = HarvestMonth.where(nov: true).first
+PatchPlant.create!(patch: pat, plant: hm.plant)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
