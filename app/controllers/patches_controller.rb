@@ -10,9 +10,9 @@ class PatchesController < ApplicationController
   def show
 
     # location_and_weather
-    create_alerts
-    @alerts = @patch.alerts.where(completed: false)
-    authorize @patch
+  create_alerts
+  @alerts = @patch.alerts.where(completed: false)
+  authorize @patch
   end
 
   def new
