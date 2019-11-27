@@ -5,7 +5,8 @@
 #
 Plant.destroy_all
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies.first) 
+
 vegetable_suffixes = ['tomato-supersweet/txz61714TM', 'carrot-mokum-f1-hybrid/760TM', 'parsnip-white-gem/tst00985TM', 'leek-nipper/tt01093TM', 'onion-supasweettrade-dulcinea-f1-hybrid/997TM', 'onion-red-baron/825TM',
 'courgette-all-green-bush/554TM', 'pumpkin-jack-of-all-trades/630TM', 'squash-avalon-f1-hybrid-winter/951TM',
 'broccoli-spiridon-f1-hybrid-calabrese/4782TM', 'brussels-sprout-bosworth-f1-hybrid/696TM', 'cabbage-brigadier-f1-hybrid-autumnwinter/83TM',

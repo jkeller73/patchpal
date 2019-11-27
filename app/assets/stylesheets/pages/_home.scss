@@ -1,1 +1,123 @@
 // Specific CSS for your home-page
+h1 {
+  font-family: $headers-font;
+  font-size: 100px;
+  color: white;
+}
+
+h2 {
+  font-family: $headers-font;
+  font-size: 50px
+}
+
+h3 {
+  font-family: $body-font;
+  color: white;
+}
+
+h5 {
+  font-family: $body-font;
+  letter-spacing: 0.05em;
+}
+
+.banner {
+  background-image: url("https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+  height: 100vh;
+  .banner-content {
+    justify-content: center;
+    text-align: center;
+    padding-top: 10%;
+  }
+}
+
+.inspire-container {
+  background-color: white;
+  height: 30em;
+  padding-right: 4em;
+  position: relative;
+  text-align: right;
+  flex-direction: column;
+  padding-top: 10%;
+  padding-right: 5%;
+  .inspire-text {
+    float: right;
+    text-align: right;
+  }
+  h2 {
+    background-image: linear-gradient(to bottom, rgb(158, 201, 139), rgb(158, 201, 139));
+    padding-left: 0px;
+    color: white;
+  }
+  h5 {
+    color: $light-gray;
+  }
+  .fa-seedling {
+    position: absolute;
+    bottom: -35px;
+    left: 150px;
+    color: $green;
+    font-size: 370px;
+  }
+  .inspire-header {
+    width: 25%;
+    text-align: right;
+    float: right;
+    justify-content: right;
+    margin-right: 0;
+    margin-left: 75%;
+  }
+}
+
+.time-container {
+    height: 30em;
+    background-color: $green;
+    padding-top: 10%;
+    padding-left: 4em;
+  h2 {
+    background-image: linear-gradient(to bottom, rgb(232, 247, 225), rgb(232, 247, 225));
+    color: $green;
+  }
+  h5 {
+    color: white;
+  }
+  .time-header {
+    width: 40%;
+
+  }
+}
+
+.track-container {
+  height: 30em;
+  background-color: $yellow;
+  padding-right: 4em;
+  position: relative;
+  text-align: right;
+  flex-direction: column;
+  padding-top: 10%;
+  padding-right: 5%;
+  h2 {
+    color: $green;
+  }
+  h5 {
+    color: white;
+  }
+  .track-header {
+    // height":
+    width: 25%;
+    background-color: rgb(252, 240, 204);
+    margin-left: 75%;
+
+  }
+  .fa-calendar-check {
+    position: absolute;
+    bottom: 5%;
+    left: 150px;
+    color: $dark-gray;
+    font-size: 370px;
+  }
+}
+
+
+
+
