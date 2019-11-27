@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_152454) do
+ActiveRecord::Schema.define(version: 2019_11_27_151539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alerts", force: :cascade do |t|
+    t.string "type_of_alert"
+    t.string "message"
+    t.bigint "patch_plant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "completed", default: false
+    t.index ["patch_plant_id"], name: "index_alerts_on_patch_plant_id"
+  end
 
   create_table "daily_weather_reports", force: :cascade do |t|
     t.date "date"
@@ -76,6 +86,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_152454) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "growing_time"
   end
 
   create_table "sowing_months", force: :cascade do |t|
@@ -107,10 +118,12 @@ ActiveRecord::Schema.define(version: 2019_11_26_152454) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "alerts", "patch_plants"
   add_foreign_key "daily_weather_reports", "patches"
   add_foreign_key "harvest_months", "plants"
   add_foreign_key "patch_plants", "patches"
