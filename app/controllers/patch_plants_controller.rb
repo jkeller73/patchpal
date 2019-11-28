@@ -13,11 +13,6 @@ class PatchPlantsController < ApplicationController
     end
   end
 
-  def plant
-    @patch_plant = PatchPlant.find(params[:id])
-    @patch_plant.update(plant_date: Time.now)
-  end
-
   def update
     @patch_plant = PatchPlant.find(params[:id])
     @patch_plant.update(patch_plant_params)
@@ -34,6 +29,7 @@ class PatchPlantsController < ApplicationController
 
   def patch_plant_params
     params.require(:patch_plant).permit(:plant_date, :plant)
+
   end
 end
 
