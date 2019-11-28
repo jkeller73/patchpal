@@ -11,6 +11,7 @@ class PatchesController < ApplicationController
     # update_weather
     create_alerts
     @alerts = @patch.alerts.where(completed: false)
+    @weather_alerts = @patch.weather_alerts.where(completed: false)
     authorize @patch
   end
 
@@ -50,6 +51,7 @@ class PatchesController < ApplicationController
   def create_alerts
     @patch.patch_plants.each(&:check_patch_plant_harvest)
     @patch.patch_plants.each(&:check_patch_plant_sowing)
+    @patch.check_weather
   end
 
   def find_patch

@@ -8,6 +8,7 @@ PatchPlant.destroy_all
 Patch.destroy_all
 User.destroy_all
 Plant.destroy_all
+DailyWeatherReport.destroy_all
 
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
@@ -122,11 +123,9 @@ pat = Patch.create!(name: 'patch1', address: 'SE5 9EF', user: u)
 hm = HarvestMonth.where(nov: true).first
 PatchPlant.create!(patch: pat, plant: hm.plant)
 
-
-
-
-
-
+DailyWeatherReport.create!(date: 3.days.ago, description: 'sunny', temperature: 10.4, patch: pat)
+DailyWeatherReport.create!(date: 2.days.ago, description: 'clouds', temperature: 9.34, patch: pat)
+DailyWeatherReport.create!(date: 1.day.ago, description: 'fog', temperature: 12.56, patch: pat)
 
 
 
