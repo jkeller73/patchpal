@@ -20,13 +20,19 @@ class PatchesController < ApplicationController
     authorize @patch
   end
 
+  def plant
+    @patch = Patch.find(params[:id])
+    @available_plants = Plant.all - @patch.plants
+    authorize @patch
+  end
+
   def create
     @patch = Patch.new(patch_params)
     @patch.user = current_user
     authorize @patch
 
     if @patch.save
-      redirect_to patch_path(@patch)
+      redirect_to plant_patch_path(@patch)
     else
       render :new
     end
