@@ -1,13 +1,16 @@
 .index-container {
   width: 50vw;
   margin: 0 auto 0 auto;
+  position: relative;
   h3 {
     font-family: $headers-font;
   }
   h2 {
     color: white;
     background-color: #9ACA8E;
-    width:
+    width: 25vw;
+    text-align: center;
+    margin: 0 auto 5% auto;
   }
 }
 
@@ -28,4 +31,21 @@
   padding-bottom: 5%;
   box-shadow: 5px 5px 15px, rgba(0, 0, 0, 0.2);
   border-radius: 5px;
+}
+
+.index-page-button {
+  background-color: #75CD4E;
+  color: white;
+  padding: 2% 4% 2% 4%;
+  justify-content: center;
+  border-radius: 5px;
+  text-decoration: none;
+  position: absolute;
+  right: -25%;
+  top: -3%;
+  &:hover {
+    text-decoration: none;
+    background-color: $green;
+    color: white;
+  }
 }

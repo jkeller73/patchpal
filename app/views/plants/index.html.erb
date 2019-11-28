@@ -1,6 +1,9 @@
 <div class="index-cards">
     <div class="index-container">
-      <h2>A-Z of Veg</h2>
+      <%= link_to "Create New Patch", new_patch_path, class: "index-page-button" %>
+      <div class="h2-div">
+        <h2>A-Z of Veg</h2>
+      </div>
       <div class="row">
         <% @plants.order(:name).each do |plant| %>
           <div class="cards col-sm-4">
