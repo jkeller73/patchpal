@@ -8,3 +8,9 @@
   <p><%= alert.message %></p>
   <%= link_to "complete", complete_alert_path(alert), method: :patch %>
 <% end %>
+
+<h2>Other alerts</h2>
+<% @weather_alerts.each do |w_alert| %>
+  <p><%= w_alert.message %></p>
+  <%= link_to "complete", complete_weather_alert_path(w_alert), method: :patch %>
+<% end %>

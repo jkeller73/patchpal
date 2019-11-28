@@ -8,10 +8,10 @@ class PatchesController < ApplicationController
   end
 
   def show
-
-    # location_and_weather
+    # update_weather
     create_alerts
     @alerts = @patch.alerts.where(completed: false)
+    @weather_alerts = @patch.weather_alerts.where(completed: false)
     authorize @patch
   end
 
@@ -51,6 +51,7 @@ class PatchesController < ApplicationController
   def create_alerts
     @patch.patch_plants.each(&:check_patch_plant_harvest)
     @patch.patch_plants.each(&:check_patch_plant_sowing)
+    @patch.check_weather
   end
 
   def find_patch
@@ -60,22 +61,5 @@ class PatchesController < ApplicationController
 
   def patch_params
     params.require(:patch).permit(:name, :address)
-  end
-
-  def location_and_weather
-    @ip = request.remote_ip
-    @user_location = JSON.parse(open("http://iplocate.io/api/lookup/#{@ip}").read)
-    @coordinates = [@user_location['latitude'], @user_location['longitude']]
-    if @coordinates[0] && @coordinates[1]
-      puts "=========================USERLOCATION: #{@coordinates}============================="
-      forecast = JSON.parse(open("http://api.openweathermap.org/data/2.5/forecast?lat=#{@coordinates[0]}&lon=#{@coordinates[1]}&APPID=#{ ENV['18b091f6bd0d6e9dd89c56e5ce648f2b
-'] }").read)
-    else
-      forecast = JSON.parse(open("http://api.openweathermap.org/data/2.5/forecast?lat=51.5074&lon=0.1278&APPID=#{ ENV['18b091f6bd0d6e9dd89c56e5ce648f2b
-'] }").read)
-    end
-    days_array = forecast['list']
-    @today = days_array[0]['weather'][0]['description']
-    @temperature = (days_array[0]['main']['temp'] - 273.15).round
   end
 end

@@ -1,6 +1,6 @@
 class DailyWeatherReport < ApplicationRecord
   belongs_to :patch
-  validates :date
-  validates :description
-  validates :temperature
+  validates :date, presence: true
+  validates :description, presence: true
+  validates :temperature, presence: true
 end

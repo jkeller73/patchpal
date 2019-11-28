@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_151539) do
+ActiveRecord::Schema.define(version: 2019_11_28_143724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,17 +36,17 @@ ActiveRecord::Schema.define(version: 2019_11_27_151539) do
   end
 
   create_table "harvest_months", force: :cascade do |t|
-    t.boolean "jan"
-    t.boolean "feb"
-    t.boolean "mar"
-    t.boolean "apr"
-    t.boolean "may"
-    t.boolean "jun"
-    t.boolean "jul"
-    t.boolean "aug"
-    t.boolean "oct"
-    t.boolean "nov"
-    t.boolean "dec"
+    t.boolean "jan", default: false
+    t.boolean "feb", default: false
+    t.boolean "mar", default: false
+    t.boolean "apr", default: false
+    t.boolean "may", default: false
+    t.boolean "jun", default: false
+    t.boolean "jul", default: false
+    t.boolean "aug", default: false
+    t.boolean "oct", default: false
+    t.boolean "nov", default: false
+    t.boolean "dec", default: false
     t.bigint "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -90,17 +90,17 @@ ActiveRecord::Schema.define(version: 2019_11_27_151539) do
   end
 
   create_table "sowing_months", force: :cascade do |t|
-    t.boolean "jan"
-    t.boolean "feb"
-    t.boolean "mar"
-    t.boolean "apr"
-    t.boolean "may"
-    t.boolean "jun"
-    t.boolean "jul"
-    t.boolean "aug"
-    t.boolean "oct"
-    t.boolean "nov"
-    t.boolean "dec"
+    t.boolean "jan", default: false
+    t.boolean "feb", default: false
+    t.boolean "mar", default: false
+    t.boolean "apr", default: false
+    t.boolean "may", default: false
+    t.boolean "jun", default: false
+    t.boolean "jul", default: false
+    t.boolean "aug", default: false
+    t.boolean "oct", default: false
+    t.boolean "nov", default: false
+    t.boolean "dec", default: false
     t.bigint "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -123,6 +123,16 @@ ActiveRecord::Schema.define(version: 2019_11_27_151539) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weather_alerts", force: :cascade do |t|
+    t.string "type_of_alert"
+    t.string "message"
+    t.bigint "patch_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "completed", default: false
+    t.index ["patch_id"], name: "index_weather_alerts_on_patch_id"
+  end
+
   add_foreign_key "alerts", "patch_plants"
   add_foreign_key "daily_weather_reports", "patches"
   add_foreign_key "harvest_months", "plants"
@@ -130,4 +140,5 @@ ActiveRecord::Schema.define(version: 2019_11_27_151539) do
   add_foreign_key "patch_plants", "plants"
   add_foreign_key "patches", "users"
   add_foreign_key "sowing_months", "plants"
+  add_foreign_key "weather_alerts", "patches"
 end
