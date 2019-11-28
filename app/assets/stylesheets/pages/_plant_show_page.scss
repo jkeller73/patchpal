@@ -3,8 +3,6 @@
   background-color: white;
   text-align: justify;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   padding-left: 5%;
   margin-top: 3%;
   h2 {
@@ -18,10 +16,13 @@
   }
 }
 
+.plant-container .row{
+  width: 100vw;
+}
 
 .calendar-container {
-  padding-right: 0 !important;
-  margin-right: 0 !important;
+  padding-right: 0;
+  margin-right: 0;
   margin-top: 3%;
   .table {
     padding-right: 0%;
@@ -32,12 +33,19 @@
    color: white;
    width: 28%;
   }
-  .calendar-content {
-    position: sticky;
-    top: 0;
-  }
 }
 
+.plant-container {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+
+.green-button {
+  background-color: #75CD4E;
+  color: white;
+  padding: 3% 5% 0% 5%;
+  justify-content: center;
+}
 
 
 
