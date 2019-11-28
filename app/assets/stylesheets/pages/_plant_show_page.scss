@@ -13,6 +13,7 @@
   }
   h5 {
     font-family: $headers-font;
+    color: $green;
   }
 }
 
@@ -43,8 +44,15 @@
 .green-button {
   background-color: #75CD4E;
   color: white;
-  padding: 3% 5% 0% 5%;
+  padding: 2% 5% 2% 5%;
   justify-content: center;
+  border-radius: 5px;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $green;
+    color: white;
+  }
 }
 
 
