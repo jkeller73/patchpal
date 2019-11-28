@@ -1,0 +1,12 @@
+.container {
+  width: 60vw;
+}
+
+.index-text {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+}
