@@ -13,50 +13,17 @@
 </div>
 <div class="green-strip"></div>
 <div class="container-new-patch">
-  <div class="drag-drop">
+<!--   <div class="drag-drop">
     <h3>My first patch</h2>
 
-  </div>
-  <button class="btn-save">save</button>
-  <img id="arrow" src="<%= asset_url("arrow.png") %>" alt="">
-  <div class="season-cards">
-    <h2>'Tis the Season!</h2>
-    <div class="container">
-      <div class="row">
-        <div class="cards col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            Vegetable
-          </div>
-        </div>
-        <div class="cards col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            Vegetable
-          </div>
-        </div>
-        <div class="cards col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            Vegetable
-          </div>
-        </div>
-        <div class="cards col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            Vegetable
-          </div>
-        </div>
-        <div class="cards col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            Vegetable
-          </div>
-        </div>
-        <div class="cards col-sm-4">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-            Vegetable
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </div> -->
+<!--   <button class="btn-save">save</button>
+  <img id="arrow" src="<%= asset_url("arrow.png") %>" alt=""> -->
 
-</div>
+ <%= simple_form_for(@patch) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.submit %>
+ <% end %>
 <img src="<%= asset_url('meadow.png') %>" alt="" id="meadow">
 

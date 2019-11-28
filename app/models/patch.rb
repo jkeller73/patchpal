@@ -1,7 +1,7 @@
 class Patch < ApplicationRecord
   belongs_to :user
   has_many :patch_plants, dependent: :destroy
-  has_many :plants, through: :patch_plant
+  has_many :plants, through: :patch_plants
   has_many :daily_weather_reports
   has_many :alerts, through: :patch_plants
   validates :name, presence: true
