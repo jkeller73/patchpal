@@ -5,7 +5,7 @@
   <div class="plant-container">
     <div class="row">
       <div class="col-6 plant-card">
-        <h2>&nbsp;<%= @plant.name %>&nbsp;</h2>
+        <h2><span class="highlightme">&nbsp;<%= @plant.name %>&nbsp;</span></h2>
         <br>
         <h5>The Basics</h5>
         <p><%= @plant.description %></p>
@@ -18,7 +18,7 @@
       </div>
       <div class="col-6 calendar-container">
         <div class="calendar-content">
-          <h5>&nbsp;Month by Month</h5>
+          <h5><span class="highlightme">&nbsp;Month by Month&nbsp;</span></h5>
           <%= render 'shared/growing_harvest_tables' %>
         </div>
         <%= link_to "Back to Plants", plants_path, class: "green-button" %>

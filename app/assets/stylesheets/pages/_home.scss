@@ -56,7 +56,6 @@ h5 {
     text-align: right;
   }
   h2 {
-    background-image: linear-gradient(to bottom, rgb(158, 201, 139), rgb(158, 201, 139));
     padding-left: 0px;
     color: white;
   }
@@ -78,6 +77,9 @@ h5 {
     margin-right: 0;
     margin-left: 75%;
   }
+  .highlightme {
+    background-color: rgb(158, 201, 139);
+  }
 }
 
 .time-container {
@@ -86,7 +88,7 @@ h5 {
     padding-top: 10%;
     padding-left: 4em;
   h2 {
-    background-image: linear-gradient(to bottom, rgb(232, 247, 225), rgb(232, 247, 225));
+    // background-image: linear-gradient(to bottom, rgb(232, 247, 225), rgb(232, 247, 225));
     color: $green;
   }
   h5 {
@@ -96,7 +98,12 @@ h5 {
     width: 40%;
 
   }
+  .highlightme {
+    background-color: rgb(232, 247, 225);
+  }
 }
+
+
 
 .track-container {
   height: 30em;
@@ -114,11 +121,8 @@ h5 {
     color: white;
   }
   .track-header {
-    // height":
     width: 25%;
-    background-color: rgb(252, 240, 204);
     margin-left: 75%;
-
   }
   .fa-calendar-check {
     position: absolute;
@@ -126,6 +130,9 @@ h5 {
     left: 150px;
     color: $dark-gray;
     font-size: 370px;
+  }
+  .highlightme {
+    background-color: rgb(252, 240, 204);
   }
 }
 
