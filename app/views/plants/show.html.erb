@@ -1,8 +1,69 @@
-<h1>Plant Show page</h1>
 
-<h2><%= @plant.name %></h2>
-<p><%= @plant.description %></p>
-<p>Hardiness: <%= @plant.hardiness %></p>
-<p>Position in: <%= @plant.position_in %></p>
-<p><%= @plant.sowing %></p>
-<p><%= @plant.more_info %></p>
+<div class="plant-container">
+  <%#= image_tag @plant.photo, alt: "alttext" %>
+  <div class="plant-card">
+    <h2>&nbsp;<%= @plant.name %>&nbsp;</h2>
+    <br>
+    <h5>The Basics</h5>
+    <p><%= @plant.description %></p>
+    <p>Hardiness: <%= @plant.hardiness %></p>
+    <p>Position in: <%= @plant.position_in %></p>
+    <h5>How to Sow</h5>
+    <p><%= @plant.sowing %></p>
+    <h5>How to Grow</h5>
+    <p><%= @plant.more_info %></p>
+    <div class="plant-calendars">
+      <table>
+        <tr>
+          <td>Months</td>
+          <td>Jan</td>
+          <td>Feb</td>
+          <td>Mar</td>
+          <td>Apr</td>
+          <td>May</td>
+          <td>Jun</td>
+          <td>Jul</td>
+          <td>Aug</td>
+          <td>Sept</td>
+          <td>Oct</td>
+          <td>Nov</td>
+          <td>Dec</td>
+        </tr>
+        <tr>
+          <td>Sow</td>
+          <td><%= @plant.sowing_month[:jan] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:feb] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:mar] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:apr] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:may] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:jun] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:jul] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:aug] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:sep] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:oct] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:nov] ? "Yes" : "No" %></td>
+          <td><%= @plant.sowing_month[:dec] ? "Yes" : "No" %></td>
+        </tr>
+        <tr>
+          <td>Harvest</td>
+          <td><%= @plant.harvest_month[:jan] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:feb] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:mar] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:apr] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:may] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:jun] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:jul] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:aug] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:sep] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:oct] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:nov] ? "Yes" : "No" %></td>
+          <td><%= @plant.harvest_month[:dec] ? "Yes" : "No" %></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
