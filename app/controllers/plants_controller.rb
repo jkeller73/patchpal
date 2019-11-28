@@ -8,4 +8,5 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
     authorize @plant
   end
+
 end

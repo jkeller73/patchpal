@@ -16,7 +16,6 @@ class PatchPlantsController < ApplicationController
   def plant
     @patch_plant = PatchPlant.find(params[:id])
     @patch_plant.update(plant_date: Time.now)
-    HarvestReminderJob.set(wait_until: Time.now + @patch_plant.grow_time).perform_later
   end
 
   def update
@@ -37,5 +36,4 @@ class PatchPlantsController < ApplicationController
     params.require(:patch_plant).permit(:plant_date, :plant)
   end
 end
-
 

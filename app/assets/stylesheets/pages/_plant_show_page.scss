@@ -1,0 +1,57 @@
+
+.plant-card {
+  background-color: white;
+  text-align: justify;
+  border-radius: 5px;
+  padding-left: 5%;
+  margin-top: 3%;
+  h2 {
+    background-color: #9ACA8E;
+    width: 34%;
+    padding: 0.6%;
+    color: white;
+  }
+  h5 {
+    font-family: $headers-font;
+    color: $green;
+  }
+}
+
+.plant-container .row{
+  width: 100vw;
+}
+
+.calendar-container {
+  padding-right: 0;
+  margin-right: 0;
+  margin-top: 3%;
+  position: relative;
+  .calendar-content {
+    padding-right: 0%;
+    position: sticky;
+    top: 0;
+  }
+  h5 {
+   font-family: $headers-font;
+   background-color: #9ACA8E;
+   color: white;
+   width: 28%;
+  }
+}
+
+.green-button {
+  background-color: #75CD4E;
+  color: white;
+  padding: 2% 5% 2% 5%;
+  justify-content: center;
+  border-radius: 5px;
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
+  &:hover {
+    text-decoration: none;
+    background-color: $green;
+    color: white;
+  }
+}
+

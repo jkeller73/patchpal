@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
   devise_for :users
   patch "alerts/:id", to: "alerts#complete", as: :complete_alert
+  patch "weather_alerts/:id", to: "weather_alerts#complete", as: :complete_weather_alert
 end
