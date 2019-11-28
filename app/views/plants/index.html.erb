@@ -1,10 +1,11 @@
-<div class="cards">
-    <div class="container">
+<div class="index-cards">
+    <div class="index-container">
+      <h2>A-Z of Veg</h2>
       <div class="row">
-        <% @plants.each do |plant| %>
+        <% @plants.order(:name).each do |plant| %>
           <div class="cards col-sm-4">
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-                <h2><%= link_to plant.name, plant_path(plant), class: "index-text" %></h2>
+                <h3><%= link_to plant.name, plant_path(plant), class: "index-text" %></h3>
               </div>
           </div>
         <% end %>
