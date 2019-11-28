@@ -1,22 +1,40 @@
-.plant-container {
 
-}
 .plant-card {
   background-color: white;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2% 2% 2% 3%;
   text-align: justify;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  margin-top: 3%;
   h2 {
     background-color: #9ACA8E;
-    width: 23%;
+    width: 34%;
     padding: 0.6%;
     color: white;
   }
   h5 {
     font-family: $headers-font;
+  }
+}
+
+
+.calendar-container {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 3%;
+  .table {
+    padding-right: 0%;
+  }
+  h5 {
+   font-family: $headers-font;
+   background-color: #9ACA8E;
+   color: white;
+   width: 28%;
+  }
+  .calendar-content {
+    position: sticky;
+    top: 0;
   }
 }
 

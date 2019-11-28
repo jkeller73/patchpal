@@ -1,72 +1,33 @@
 
-<div class="plant-container">
+<!-- <div class="plant-container"> -->
   <%#= image_tag @plant.photo, alt: "alttext" %>
-  <div class="plant-card">
-    <h2>&nbsp;<%= @plant.name %>&nbsp;</h2>
-    <br>
-    <h5>The Basics</h5>
-    <p><%= @plant.description %></p>
-    <p>Hardiness: <%= @plant.hardiness %></p>
-    <p>Position in: <%= @plant.position_in %></p>
-    <h5>How to Sow</h5>
-    <p><%= @plant.sowing %></p>
-    <h5>How to Grow</h5>
-    <p><%= @plant.more_info %></p>
-    <div class="plant-calendars">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Months</th>
-            <th scope="col">Jan</th>
-            <th scope="col">Feb</th>
-            <th scope="col">Mar</th>
-            <th scope="col">Apr</th>
-            <th scope="col">May</th>
-            <th scope="col">Jun</th>
-            <th scope="col">Jul</th>
-            <th scope="col">Aug</th>
-            <th scope="col">Sept</th>
-            <th scope="col">Oct</th>
-            <th scope="col">Nov</th>
-            <th scope="col">Dec</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>Sow</td>
-          <td><%= @plant.sowing_month[:jan] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:feb] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:mar] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:apr] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:may] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:jun] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:jul] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:aug] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:sep] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:oct] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:nov] ? "Yes" : "No" %></td>
-          <td><%= @plant.sowing_month[:dec] ? "Yes" : "No" %></td>
-        </tr>
-        <tr>
-          <td>Harvest</td>
-          <td><%= @plant.harvest_month[:jan] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:feb] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:mar] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:apr] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:may] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:jun] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:jul] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:aug] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:sep] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:oct] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:nov] ? "Yes" : "No" %></td>
-          <td><%= @plant.harvest_month[:dec] ? "Yes" : "No" %></td>
-        </tr>
-        </tbody>
-      </table>
+
+  <div class="plant-container">
+    <div class="row">
+      <div class="col-6 plant-card">
+        <h2>&nbsp;<%= @plant.name %>&nbsp;</h2>
+        <br>
+        <h5>The Basics</h5>
+        <p><%= @plant.description %></p>
+        <p>Hardiness: <%= @plant.hardiness %></p>
+        <p>Position in: <%= @plant.position_in %></p>
+        <h5>How to Sow</h5>
+        <p><%= @plant.sowing %></p>
+        <h5>How to Grow</h5>
+        <p><%= @plant.more_info %></p>
+      </div>
+      <div class="col-6 calendar-container">
+        <div class="calendar-content">
+          <h5>&nbsp;Month by Month</h5>
+          <%= render 'shared/growing_harvest_tables' %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+  <%= link_to "Back to Plants", plants_path %>
+
+
 
 
 
