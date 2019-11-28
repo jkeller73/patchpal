@@ -5,6 +5,7 @@ body {
 .banner-new-patch {
   background-image: asset_url("started.jpg");
   background-size: cover;
+  background-position: center;
   height: 55vh;
   display: flex;
   flex-direction: column;
@@ -25,6 +26,7 @@ body {
 
 .search-form-control {
   position: relative;
+  top: -25px;
 }
 
 .search-form-control .btn {
@@ -96,12 +98,13 @@ body {
 // My patch section on RHS
 .patch-co {
   width: 18vw;
-  height: 40vh;
+  min-height: 40vh;
+  height: auto;
   background-color: white;
   text-align: center;
   position: absolute;
   right: 30px;
-  margin-top: 30px;
+  margin-top: 50px;
   border-radius: 7px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   h5 {
@@ -123,10 +126,21 @@ body {
 .leaf-avatar {
   width: 43px;
   height: 43px;
+  // border-radius: 50%;
+  // border: solid 3px white;
+  position: absolute;
+  top: -20px;
+}
+
+.co {
   border-radius: 50%;
   border: solid 3px white;
-  position: relative;
-  top: - 43px;
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  z-index: -1;
+  top: -30px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -141,7 +155,7 @@ body {
   width: 55vw;
   height: 500px;
   padding: 40px;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 50px;
   h2 {
     width: 400px;
@@ -182,8 +196,17 @@ body {
 #plus-button {
   width: 30px;
   position: relative;
-  bottom: -40px;
+  bottom: -37px;
   right: -70px;
+  background-color: #75CD4E;
+  border: none;
+  border-radius: 2px;
+  transition: 0.3s;
+  color: white;
+}
+
+#plus-button:hover {
+  background-color: #69ba43;
 }
 
 
@@ -197,7 +220,7 @@ body {
 #meadow {
   width: 100vw;
   position: absolute;
-  top: 156vh;
+  top: 115vh;
   z-index: -1;
 }
 
