@@ -15,10 +15,10 @@ body {
 }
 
 .login {
-   margin:auto;
+    margin:auto;
     position:absolute;
     top: 60%;
-    left: 50%;
+    left: 55%;
     width:20em;
     height:18em;
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
@@ -34,6 +34,9 @@ text-align: center;
 border-radius: 5px;
 }
 
-img {
-  text-align: center;
+.meadowimg {
+  text-content: center;
+  width: 100%;
+  //display: inline-block;
+  //vertical-align: middle;
 }
