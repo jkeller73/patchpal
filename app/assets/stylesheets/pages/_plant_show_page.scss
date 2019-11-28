@@ -25,8 +25,11 @@
   padding-right: 0;
   margin-right: 0;
   margin-top: 3%;
-  .table {
+  position: relative;
+  .calendar-content {
     padding-right: 0%;
+    position: sticky;
+    top: 0;
   }
   h5 {
    font-family: $headers-font;
@@ -36,24 +39,19 @@
   }
 }
 
-.plant-container {
-  padding-right: 0 !important;
-  margin-right: 0 !important;
-}
-
 .green-button {
   background-color: #75CD4E;
   color: white;
   padding: 2% 5% 2% 5%;
   justify-content: center;
   border-radius: 5px;
-
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
   &:hover {
     text-decoration: none;
     background-color: $green;
     color: white;
   }
 }
-
-
 
