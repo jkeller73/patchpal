@@ -13,22 +13,25 @@
     <h5>How to Grow</h5>
     <p><%= @plant.more_info %></p>
     <div class="plant-calendars">
-      <table>
-        <tr>
-          <td>Months</td>
-          <td>Jan</td>
-          <td>Feb</td>
-          <td>Mar</td>
-          <td>Apr</td>
-          <td>May</td>
-          <td>Jun</td>
-          <td>Jul</td>
-          <td>Aug</td>
-          <td>Sept</td>
-          <td>Oct</td>
-          <td>Nov</td>
-          <td>Dec</td>
-        </tr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Months</th>
+            <th scope="col">Jan</th>
+            <th scope="col">Feb</th>
+            <th scope="col">Mar</th>
+            <th scope="col">Apr</th>
+            <th scope="col">May</th>
+            <th scope="col">Jun</th>
+            <th scope="col">Jul</th>
+            <th scope="col">Aug</th>
+            <th scope="col">Sept</th>
+            <th scope="col">Oct</th>
+            <th scope="col">Nov</th>
+            <th scope="col">Dec</th>
+          </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>Sow</td>
           <td><%= @plant.sowing_month[:jan] ? "Yes" : "No" %></td>
@@ -58,8 +61,8 @@
           <td><%= @plant.harvest_month[:oct] ? "Yes" : "No" %></td>
           <td><%= @plant.harvest_month[:nov] ? "Yes" : "No" %></td>
           <td><%= @plant.harvest_month[:dec] ? "Yes" : "No" %></td>
-          <td></td>
         </tr>
+        </tbody>
       </table>
     </div>
   </div>
