@@ -2,7 +2,7 @@
     <div class="index-container">
       <%= link_to "Create New Patch", new_patch_path, class: "index-page-button" %>
       <div class="h2-div">
-        <h2>A-Z of Veg</h2>
+        <h2><span class="highlightme">&nbsp;A-Z of Veg&nbsp;</span></h2>
       </div>
       <div class="row">
         <% @plants.order(:name).each do |plant| %>
