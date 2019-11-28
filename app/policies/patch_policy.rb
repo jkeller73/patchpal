@@ -21,6 +21,10 @@ class PatchPolicy < ApplicationPolicy
     true
   end
 
+  def plant?
+    update?
+  end
+
   def update?
     user_is_owner?
     # record.user == user

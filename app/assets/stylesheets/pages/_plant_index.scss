@@ -1,0 +1,51 @@
+.index-container {
+  width: 50vw;
+  margin: 0 auto 0 auto;
+  position: relative;
+  h3 {
+    font-family: $headers-font;
+  }
+  h2 {
+    color: white;
+    background-color: #9ACA8E;
+    width: 25vw;
+    text-align: center;
+    margin: 0 auto 5% auto;
+  }
+}
+
+.index-text {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+}
+
+.index-cards {
+  background-color: white;
+  width: 80vw;
+  margin: 1% auto 3% auto;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  box-shadow: 5px 5px 15px, rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.index-page-button {
+  background-color: #75CD4E;
+  color: white;
+  padding: 2% 4% 2% 4%;
+  justify-content: center;
+  border-radius: 5px;
+  text-decoration: none;
+  position: absolute;
+  right: -25%;
+  top: -3%;
+  &:hover {
+    text-decoration: none;
+    background-color: $green;
+    color: white;
+  }
+}

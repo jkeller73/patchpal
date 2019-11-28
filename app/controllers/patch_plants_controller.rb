@@ -1,10 +1,13 @@
 class PatchPlantsController < ApplicationController
   def create
     @patch = Patch.find(params[:patch_id])
-    @patch_plant = PatchPlant.new(patch_plant_params)
+    @plant = Plant.find(patch_plant_params[:plant])
+    @patch_plant = PatchPlant.new
+    @patch_plant.plant = @plant
     @patch_plant.patch = @patch
+    authorize @patch_plant
     if @patch_plant.save
-      redirect_to patch_path(@patch)
+      redirect_to plant_patch_path(@patch)
     else
       render :new
     end
@@ -25,7 +28,8 @@ class PatchPlantsController < ApplicationController
   private
 
   def patch_plant_params
-    params.require(:patch_path).permit(:plant_date, :harvest_date, :harvest, :plant)
+    params.require(:patch_plant).permit(:plant_date, :plant)
+
   end
 end
 
