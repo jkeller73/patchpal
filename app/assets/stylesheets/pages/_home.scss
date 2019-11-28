@@ -1,5 +1,9 @@
 // Specific CSS for your home-page
 
+.minh {
+  min-height: calc(100vh - 100px - 10vh);
+}
+
 h1 {
   font-family: $headers-font;
   font-size: 100px;
