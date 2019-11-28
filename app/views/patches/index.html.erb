@@ -1,6 +1,8 @@
 <h1>patch index page</h1>
 
 <% @patches.each do |patch|  %>
-  <%= patch.name %>
+  <%= link_to patch_path(patch) do  %>
+    <%= patch.name %>
+  <% end %>
   <%= patch.address %>
 <% end %>
