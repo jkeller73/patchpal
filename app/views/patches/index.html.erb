@@ -1,8 +1,23 @@
-<h1>patch index page</h1>
 
-<% @patches.each do |patch|  %>
-  <%= link_to patch_path(patch) do  %>
-    <%= patch.name %>
-  <% end %>
-  <%= patch.address %>
-<% end %>
+
+
+<div class="patchindex">
+
+  <div class="crop">
+       <img src="<%=('https://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80')%>"/>
+  </div>
+  <div class="green-strip"></div>
+
+
+
+
+
+    <% @patches.each do |patch|  %>
+      <%= link_to patch_path(patch) do  %>
+        <%= patch.name %>
+      <% end %>
+      <%= patch.address %>
+    <% end %>
+
+
+</div>
