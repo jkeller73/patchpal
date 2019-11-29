@@ -11,22 +11,25 @@
         <p><%= @patch_plant.plant.description %></p>
         <h5>How to Sow</h5>
         <p><%= @patch_plant.plant.sowing %></p>
+
         <h5>When you planted it:</h5>
         <% if @patch_plant.plant_date == nil %>
-          <p><%= "You haven't planted it yet" %></p>
+          <p><%= "You haven't planted it yet"  %></p>
         <% else %>
-          <p><%= @patch_plant.plant_date  %></p>
+          <p><%= @patch_plant.plant_date %></p>
         <% end %>
+
         <h5>When you harvested it:</h5>
         <% if @patch_plant.harvest_date == nil %>
           <p><%= "You haven't harvested it yet" %></p>
         <% else %>
-          <p><%= @patch_plant.harvest_date  %></p>
+          <p><%= @patch_plant.harvest_date %></p>
         <% end %>
+
       </div>
       <div class="col-6 calendar-container">
         <%= image_tag "cabbage.png", alt: "alttext", class: "veg-show-background-pic" %>
-        <%= link_to "Back to Patch", patch_path, class: "green-button" %>
+        <%= link_to "Back to Patch", patch_path(@patch_plant.patch), class: "green-button" %>
       </div>
     </div>
   </div>
