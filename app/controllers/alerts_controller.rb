@@ -1,7 +1,7 @@
 class AlertsController < ApplicationController
   def complete
-    @patch_plant = PatchPlant.find(params[:id])
     @alert = Alert.find(params[:id])
+    @patch_plant = @alert.patch_plant
     @alert.completed = true
     if @alert.type_of_alert == 'sowing'
       @patch_plant.update(plant_date: Time.now)
