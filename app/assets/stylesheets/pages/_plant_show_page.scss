@@ -1,20 +1,26 @@
 .veg-show-background-pic {
   width: 45vw;
+  margin-bottom: 5%;
 }
 .plant-card {
   background-color: white;
   text-align: justify;
   border-radius: 5px;
   margin-top: 3%;
+  width: 50%;
   h2 {
 
     width: 34%;
-    padding: 0.6%;
+    padding-left: 3%;
     color: white;
   }
   h5 {
     font-family: $headers-font;
     color: $green;
+    padding-left: 3%;
+  }
+  p {
+    padding: 0 2% 2% 3%;
   }
   .highlightme {
     background-color: #9ACA8E;
@@ -30,10 +36,10 @@
   margin-right: 0%;
   margin-top: 3%;
   position: relative;
+  position: sticky;
   .calendar-content {
     padding-right: 0%;
     margin-right: 0%;
-    position: sticky;
     top: 0;
   }
   h5 {
@@ -73,3 +79,6 @@
   }
 }
 
+.month-table-j {
+  margin-top: 5%;
+}
