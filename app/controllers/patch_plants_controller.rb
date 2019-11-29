@@ -28,8 +28,9 @@ class PatchPlantsController < ApplicationController
 
   def destroy
     @patch_plant = PatchPlant.find(params[:id])
+    authorize @patch_plant
     @patch_plant.destroy
-    redirect_to patch_path(@patch_plant.patch)
+    redirect_to plant_patch_path(@patch_plant.patch)
   end
 
   private
