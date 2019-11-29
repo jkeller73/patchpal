@@ -1,4 +1,11 @@
 class PatchPlantsController < ApplicationController
+
+  def show
+    @patch_plant = PatchPlant.find(params[:id])
+    authorize @patch_plant
+
+  end
+
   def create
     @patch = Patch.find(params[:patch_id])
     @plant = Plant.find(patch_plant_params[:plant])
