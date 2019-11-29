@@ -8,4 +8,8 @@ class PatchPlantPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def destroy?
+    record.patch.user == user
+  end
 end
