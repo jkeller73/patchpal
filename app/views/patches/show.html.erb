@@ -1,10 +1,44 @@
-<h1>Show Patch Page</h1>
-
-<br>
-<%= @patch.name %>
-<%= @patch.address %>
-
-<% @alerts.each do |alert| %>
-  <p><%= alert.message %></p>
-  <%= link_to "complete", complete_alert_path(alert), method: :patch %>
+<% content_for(:title) do %>
+ <%= @patch.name.capitalize %> | Patch Pal
 <% end %>
+
+
+
+
+<div class="all">
+  <div class="titlepatch">
+    <h1><%= @patch.name %></h1>
+  </div>
+  <div class="infopatch">
+    <p><%#= @patch.address %></p>
+    <div class="plants">
+    <% @patch.patch_plants.each do |plant| %>
+      <div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)">
+        <li><%= link_to plant.plant.name, patch_plant_path(plant), class: "index-text" %></li>
+      </div>
+    <% end %>
+  </div>
+  </div>
+
+
+  <div class="alerts">
+    <% @alerts.each do |alert| %>
+      <div class="planting-alerts">
+        <p><%= alert.message %></p>
+        <% if alert.type_of_alert == 'harvest' %>
+          <%= link_to '<button type="button" class="bti btn-success">Harvest</button>'.html_safe, complete_alert_path(alert), method: :patch %>
+        <% elsif alert.type_of_alert == 'sowing' %>
+          <%= link_to '<button type="button" class="bti btn-success">Sow</button>'.html_safe, complete_alert_path(alert), method: :patch %>
+        <% end %>
+      </div>
+    <% end %>
+
+
+    <% @weather_alerts.each do |w_alert| %>
+      <div class="weather-alerts">
+        <p><%= w_alert.message %></p>
+        <%= link_to '<button type="button" class="bti btn-success">Water</button>'.html_safe, complete_weather_alert_path(w_alert), method: :patch %>
+      </div>
+    <% end %>
+  </div>
+</div>

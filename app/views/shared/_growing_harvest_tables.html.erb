@@ -1,0 +1,51 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Jan</th>
+      <th scope="col">Feb</th>
+      <th scope="col">Mar</th>
+      <th scope="col">Apr</th>
+      <th scope="col">May</th>
+      <th scope="col">Jun</th>
+      <th scope="col">Jul</th>
+      <th scope="col">Aug</th>
+      <th scope="col">Sep</th>
+      <th scope="col">Oct</th>
+      <th scope="col">Nov</th>
+      <th scope="col">Dec</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sow</td>
+      <td><%= @plant.sowing_month[:jan] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:feb] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:mar] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:apr] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:may] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:jun] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:jul] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:aug] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:sep] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:oct] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:nov] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.sowing_month[:dec] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+    </tr>
+    <tr>
+      <td>Harvest</td>
+      <td><%= @plant.harvest_month[:jan] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:feb] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:mar] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:apr] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:may] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:jun] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:jul] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:aug] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:sep] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:oct] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:nov] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+      <td><%= @plant.harvest_month[:dec] ? '<i class="fas fa-check"></i>'.html_safe : '<i class="fas fa-times"></i>'.html_safe %></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,68 @@
+
+.banner-crop {
+  height: 500px;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.welcome {
+  display: flex;
+  color: white;
+  margin-left: 30%;
+}
+
+.card-patch {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 60%;
+  height: 30%;
+  margin: auto;
+}
+
+.card-trip > img {
+  height: 400px;
+  width: 100%;
+ object-fit: cover;
+
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+ // margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.patchlist {
+  color: white;
+  background-color: rgba($green, 0.6);
+  //margin-left: 225px;
+  //padding: 20px 700px 0px 0px;
+  width: 100%;
+}
+
+
+.btn-viewpatch {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  //background: #1EDD88;
+  transition: background 0.3s ease;
+  margin-left: 500px;
+}
+
+.btn-viewpatch:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+

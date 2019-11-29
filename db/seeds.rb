@@ -8,6 +8,7 @@ PatchPlant.destroy_all
 Patch.destroy_all
 User.destroy_all
 Plant.destroy_all
+DailyWeatherReport.destroy_all
 
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
@@ -116,17 +117,15 @@ array.each do |url|
 end
 
 
-u = User.create!(first_name: 'me', last_name: 'Something', email: 'me@gmail.com', password: '123456')
-pat = Patch.create!(name: 'patch1', address: 'SE5 9EF', user: u)
+u = User.create!(first_name: 'Juliette', last_name: 'Keller', email: 'juliette@gmail.com', password: '123123')
+pat = Patch.create!(name: 'patchy', address: 'SE5 9EF', user: u)
 10.times { PatchPlant.create!(patch: pat, plant: Plant.all.sample)}
 hm = HarvestMonth.where(nov: true).first
 PatchPlant.create!(patch: pat, plant: hm.plant)
 
-
-
-
-
-
+DailyWeatherReport.create!(date: 3.days.ago, description: 'sunny', temperature: 10.4, patch: pat)
+DailyWeatherReport.create!(date: 2.days.ago, description: 'clouds', temperature: 9.34, patch: pat)
+DailyWeatherReport.create!(date: 1.day.ago, description: 'fog and rainy', temperature: 12.56, patch: pat)
 
 
 

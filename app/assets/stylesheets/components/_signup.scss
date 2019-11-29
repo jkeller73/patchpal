@@ -1,12 +1,20 @@
 .registration {
-   margin:auto;
-    position:absolute;
-    top: 50%;
-    left: 55%;
-    width:60em;
-    height:18em;
-    margin-top: -9em; /*set to a negative number 1/2 of your height*/
-    margin-left: -15em;
+   width: 100vw;
+   min-height: 50vh;
+   height: auto;
+   display: flex;
+   justify-content: center;
+}
+
+.form-registration {
+  text-align: center;
+  width: 30vw;
+  padding: 25px;
+  background-color: white;
+  position: relative;
+  top: -95px;
+  border-radius: 7px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .form-inputs {
@@ -18,21 +26,33 @@ text-align: center;
 border-radius: 5px;
 }
 
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #f7f7f7;
+  background-clip: padding-box;
+  border: 1px solid #E9E8E8;
+  border-radius: 2px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.label {
+  color: #393939 !important;
+}
+
 h2 {
   padding: 20px;
   color: #343a40;
 }
 
-.btn {
-  color: white ;
-  background-color: $green;
-  padding: 0.8% 4%;
-  border-radius: 5px;
-  //margin: 30px;
-  width: 80%;
-  //padding: 20px;
-  margin: auto;
-  //text-align: center;
+.btn-flat {
+  margin: 10px;
  }
 
 .end-page:hover {
@@ -46,11 +66,6 @@ h2 {
   height: 60vh;
 }
 
-.regmeadow {
-  text-content: center;
-  width: 100%;
-}
-
 .green-strip {
   height: 2vh;
   background-color: $green;
@@ -58,5 +73,11 @@ h2 {
 
 body {
   background-color: white;
+}
+
+#meadow-signup {
+  position: absolute;
+  z-index: -1;
+  top: 670px;
 }
 

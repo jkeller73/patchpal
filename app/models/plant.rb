@@ -10,5 +10,15 @@ class Plant < ApplicationRecord
   # validates :more_info, presence: true
   validates :photo, presence: true
 
+  # def return_icon(sym, table)
+  #   if plant.sowing_month[:month] == true
+  #     return
+
+  # end
+
+
+#<td><%= @plant.return_icon(:feb, "sowing") %></td>
+
+
 
 end

@@ -1,8 +1,40 @@
-<h1>Plant Show page</h1>
 
-<h2><%= @plant.name %></h2>
-<p><%= @plant.description %></p>
-<p>Hardiness: <%= @plant.hardiness %></p>
-<p>Position in: <%= @plant.position_in %></p>
-<p><%= @plant.sowing %></p>
-<p><%= @plant.more_info %></p>
+<!-- <div class="plant-container"> -->
+  <%#= image_tag @plant.photo, alt: "alttext" %>
+  <% content_for(:title) do %>
+   <%= @plant.name.capitalize() %> | Patch Pal
+  <% end %>
+
+  <div class="plant-container">
+    <div class="row">
+      <div class="col-6 plant-card">
+        <h2><span class="highlightme">&nbsp;<%= @plant.name %>&nbsp;</span></h2>
+        <br>
+        <h5>The Basics</h5>
+        <p><%= @plant.description %></p>
+        <p>Hardiness: <%= @plant.hardiness %></p>
+        <p>Position in: <%= @plant.position_in %></p>
+        <h5>How to Sow</h5>
+        <p><%= @plant.sowing %></p>
+        <h5>How to Grow</h5>
+        <p><%= @plant.more_info %></p>
+      </div>
+      <div class="col-6 calendar-container">
+        <%= image_tag "cabbage.png", alt: "alttext", class: "veg-show-background-pic" %>
+        <div class="calendar-content">
+          <h5><span class="highlightme month-table-j">&nbsp;Month by Month&nbsp;</span></h5>
+          <%= render 'shared/growing_harvest_tables' %>
+        </div>
+
+        <%= link_to "Back to Plants", plants_path, class: "green-button" %>
+      </div>
+    </div>
+    <%#= image_tag "cabbage.png", alt: "alttext", class: "veg-show-background-pic" %>
+  </div>
+
+
+
+
+
+
+

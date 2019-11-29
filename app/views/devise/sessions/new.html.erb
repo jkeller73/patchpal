@@ -1,6 +1,6 @@
-<div class="newsession">
-  <div class="banner-login"></div>
-  <div class="green-strip"></div>
+<div class="banner-login"></div>
+<div class="green-strip"></div>
+<div class="login-container">
   <div class="login">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
@@ -12,13 +12,13 @@
                       required: false,
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Log in", class: "form-actions btn-flat"%>
             <div class="reminder">
-            <%= render "devise/shared/links" %>
+            <%= render "devise/shared/links"%>
             </div>
         </div>
       <% end %>
   </div>
-
-  <img class="meadowimg" src="<%= asset_url('meadow2.png') %>"/>
+<!-- <img src="<%= asset_url('meadow2.png') %>"/> -->
 </div>
+
