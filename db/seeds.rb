@@ -125,7 +125,7 @@ PatchPlant.create!(patch: pat, plant: hm.plant)
 
 DailyWeatherReport.create!(date: 3.days.ago, description: 'sunny', temperature: 10.4, patch: pat)
 DailyWeatherReport.create!(date: 2.days.ago, description: 'clouds', temperature: 9.34, patch: pat)
-DailyWeatherReport.create!(date: 1.day.ago, description: 'fog', temperature: 12.56, patch: pat)
+DailyWeatherReport.create!(date: 1.day.ago, description: 'fog and rainy', temperature: 12.56, patch: pat)
 
 
 

@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     member do
       get "plant", to: "patches#plant"
     end
-    resources :patch_plants, only: [:create]
+
+    resources :patch_plants, only: [:show, :create, :destroy]
+
   end
   resources :patch_plants, only: [:destroy]
   devise_for :users

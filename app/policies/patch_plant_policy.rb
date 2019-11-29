@@ -9,6 +9,11 @@ class PatchPlantPolicy < ApplicationPolicy
     true
   end
 
+
+  def show?
+    true
+  end
+
   def destroy?
     record.patch.user == user
   end
