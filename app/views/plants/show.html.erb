@@ -1,6 +1,9 @@
 
 <!-- <div class="plant-container"> -->
   <%#= image_tag @plant.photo, alt: "alttext" %>
+  <% content_for(:title) do %>
+   <%= @plant.name.capitalize() %> | Patch Pal
+  <% end %>
 
   <div class="plant-container">
     <div class="row">
