@@ -1,4 +1,5 @@
 import "bootstrap";
+
 import places from 'places.js'
 
 const placesAutocomplete = places({
@@ -6,3 +7,4 @@ const placesAutocomplete = places({
   apiKey: process.env.ALGOLIA_APP_KEY,
   container: document.querySelector('#patch_address')
 });
+
