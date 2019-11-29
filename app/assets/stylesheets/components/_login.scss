@@ -14,15 +14,19 @@ body {
   background-color: white;
 }
 
+.login-container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+}
+
 .login {
-   margin:auto;
-    position:absolute;
-    top: 60%;
-    left: 50%;
-    width:20em;
-    height:18em;
-    margin-top: -9em; /*set to a negative number 1/2 of your height*/
-    margin-left: -15em;
+  position:relative;
+  width:25vw;
+  height:15vh;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em;
 }
 
 .form-inputs {
