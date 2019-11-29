@@ -17,6 +17,14 @@ class PatchPolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    true
+  end
+
+  def plant?
+    update?
+  end
+
   def update?
     user_is_owner?
     # record.user == user
@@ -32,5 +40,4 @@ class PatchPolicy < ApplicationPolicy
   def user_is_owner?
     record.user == user
   end
-
 end

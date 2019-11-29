@@ -1,7 +1,20 @@
-<h1>hello</h1>
-
-<%= simple_form_for(@patch) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.button :submit %>
+<% content_for(:title) do %>
+ Let's Get Started | Patch Pal
 <% end %>
+
+<div class="new-patch-page-container">
+  <div class="banner-new-patch">
+    <h1>Let's get started</h1>
+  </div>
+  <div class="green-strip"></div>
+  <div class="container-new-patch">
+    <div class="new-patch-text">
+        <h2>Create Your Patch</h2>
+    </div>
+    <%= simple_form_for(@patch) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.submit class:"submit-button" %>
+    <% end %>
+  <img src="<%= asset_url('meadow.png') %>" alt="" id="meadow-new-form">
+</div>

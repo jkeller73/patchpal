@@ -1,19 +1,16 @@
 class PatchPlantsController < ApplicationController
   def create
     @patch = Patch.find(params[:patch_id])
-    @patch_plant = PatchPlant.new(patch_plant_params)
+    @plant = Plant.find(patch_plant_params[:plant])
+    @patch_plant = PatchPlant.new
+    @patch_plant.plant = @plant
     @patch_plant.patch = @patch
+    authorize @patch_plant
     if @patch_plant.save
-      redirect_to patch_path(@patch)
+      redirect_to plant_patch_path(@patch)
     else
       render :new
     end
-  end
-
-  def plant
-    @patch_plant = PatchPlant.find(params[:id])
-    @patch_plant.update(plant_date: Time.now)
-    HarvestReminderJob.set(wait_until: Time.now + @patch_plant.grow_time).perform_later
   end
 
   def update
@@ -31,8 +28,8 @@ class PatchPlantsController < ApplicationController
   private
 
   def patch_plant_params
-    params.require(:patch_path).permit(:plant_date, :plant)
+    params.require(:patch_plant).permit(:plant_date, :plant)
+
   end
 end
-
 
