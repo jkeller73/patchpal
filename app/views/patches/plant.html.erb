@@ -41,7 +41,7 @@
       <div class="leaf-avatar co"></div>
       <h5><%= @patch.name %> Patch</h5>
       <% @patch.plants.each do |plant| %>
-        <p><%= plant.name %></p>
+        <p><%= plant.name.capitalize() %></p>
       <% end %>
     </div>
   </div>
