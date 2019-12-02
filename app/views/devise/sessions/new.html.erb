@@ -1,7 +1,6 @@
-<div class="banner-login"></div>
 <div class="green-strip"></div>
-<div class="login-container">
-  <div class="login">
+<div class="banner-login">
+  <div class="login" style="background-image: asset_url('meadow2.png')">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
@@ -19,6 +18,6 @@
         </div>
       <% end %>
   </div>
-<!-- <img src="<%= asset_url('meadow2.png') %>"/> -->
+  <img id="meadow-login" src="<%= asset_url('meadow2.png') %>"/>
 </div>
 
