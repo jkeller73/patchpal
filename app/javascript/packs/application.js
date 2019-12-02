@@ -1,5 +1,4 @@
 import "bootstrap";
-
 import places from 'places.js';
 
 if (document.querySelector('#patch_address')) {
