@@ -1,0 +1,6 @@
+<div id="veg-results">
+  <% patch.plants.each do |plant| %>
+    <% patch_plant = patch.patch_plants.find_by(plant: plant) %>
+    <p id="patch_plant_<%= patch_plant.id %>"><%= plant.name.capitalize %> <%= link_to "-", patch_plant_path(patch_plant), method: :delete, remote: true %> </p>
+  <% end %>
+</div>
