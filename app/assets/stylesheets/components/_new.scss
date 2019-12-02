@@ -64,7 +64,6 @@ body {
   justify-content: center;
   position: relative;
   // height: 100vh;
-
   // flex-direction: column;
 }
 
@@ -223,5 +222,10 @@ body {
   left: 0px;
   bottom: 0;
   z-index: -1;
+}
+
+.season-cards {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 

@@ -23,6 +23,7 @@ class PatchesController < ApplicationController
   def plant
     @patch = Patch.find(params[:id])
     @recommended_plants = Plant.this_month_recommended - @patch.plants
+    @other_plants = Plant.all - @recommended_plants
     authorize @patch
   end
 
