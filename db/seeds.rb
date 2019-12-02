@@ -21,7 +21,7 @@ vegetable_suffixes = ['tomato-supersweet/txz61714TM', 'carrot-mokum-f1-hybrid/76
 'broad-bean-jubilee-hysor/802TM','parsley-laura/862TM', 'basil-christmas/4886TM', 'coriander/481TM',
 'lettuce-sweet-success-icebergromaine/TT50586TM', 'radish-mars-f1-hybrid/tr54728TM', 'cucumber-diva/TT52081TM', 'lettuce-winter-gem-cos/999TM', 'broad-bean-aquadulce-claudia/138TM']
 
-plant_images = ['tomato.png', 'carrots.png', 'parsnip.jpg', 'leek.png', 'onionwhite.png', 'onionred.png', 'courgette.jpg', 'pumpkin.png', 'squash.jpg', 'broccoli.png', 'brusselsprouts.png', 'cabbage.png', 'kale.png', 'swisschard.png', 'swisschard.png', 'beetroot.png', 'sweetpepper.png', 'chillipepper.png', 'peas.jpg', 'broadbean.jpg', 'parsley.jpg', 'basil.jpg', 'coriander.jpg', 'cabbage.png', 'cabbage.png']
+plant_images = ['tomato.png', 'carrots.png', 'parsnip.jpg', 'leek.png', 'onionwhite.png', 'onionred.png', 'courgette.jpg', 'pumpkin.png', 'squash.jpg', 'broccoli.png', 'brusselsprouts.png', 'cabbage.png', 'kale.png', 'swisschard.png', 'swisschard.png', 'beetroot.png', 'sweetpepper.png', 'chillipepper.png', 'peas.jpg', 'broadbean.jpg', 'parsley.jpg', 'basil.jpg', 'coriander.jpg', 'cabbage.png', 'cabbage.png', 'lettuces.jpg', 'broadbean.jpg']
 
 array = []
 vegetable_suffixes.each do |suffix|
