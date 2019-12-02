@@ -38,8 +38,27 @@
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
   }
 
-.patch-table {
-  margin: 0 auto 0 auto;
+
+
+.patch-plant-table-container {
+  background-color: white;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  width: 50vw;
+  margin: 0 auto 0 auto;
+  padding: 3% 0 3% 0;
+  h5 {
+    font-family: $headers-font;
+    color: white;
+    text-align: center;
+    padding-bottom: 1%;
+  }
+  .highlightme {
+    background-color: #9ACA8E;
+
+  }
+  .patch-table {
+    margin: 0 auto 0 auto;
+
+  }
 }
 
