@@ -1,13 +1,14 @@
 <div class="banner-new-patch">
   <h1>Let's get started</h1>
-  <div class="search-bar">
-
-  </div>
+  <!-- <div class="search-bar">
+  </div> -->
 </div>
 <div class="green-strip"></div>
 <div class="container-new-patch">
   <div class="season-cards">
-    <%= render 'add_patch_plant', available_plants: @available_plants, patch: @patch %>
+
+    <%= render 'add_patch_plant', available_plants: @recommended_plants, patch: @patch %>
+
   </div>
 
   <div class="patch-co">

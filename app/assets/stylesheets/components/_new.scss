@@ -63,6 +63,8 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
+  // height: 100vh;
+
   // flex-direction: column;
 }
 
@@ -210,8 +212,10 @@ body {
 #meadow {
   width: 100vw;
   position: absolute;
-  bottom: 0;
+
+  // top: 115vh;
   z-index: -1;
+  bottom: 0;
 }
 
 #man {

@@ -1,9 +1,10 @@
 .registration {
    width: 100vw;
    min-height: 50vh;
-   height: auto;
+   height: 100vh;
    display: flex;
    justify-content: center;
+   position: relative;
 }
 
 .form-registration {
@@ -18,18 +19,18 @@
 }
 
 .form-inputs {
-margin: auto;
-background-color: white;
-padding: 20px;
-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-text-align: center;
-border-radius: 5px;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  text-align: center;
+  border-radius: 5px;
 }
 
 .form-control {
   display: block;
   width: 100%;
-  height: calc(1.5em + 0.75rem + 2px);
+  // height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -41,6 +42,9 @@ border-radius: 5px;
   border-radius: 2px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+
+
 
 .label {
   color: #393939 !important;
@@ -59,13 +63,6 @@ h2 {
   text-decoration: none;
 }
 
-.banner-signup {
-  background-image: url('https://images.unsplash.com/photo-1473554198449-fd330ccd766e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-}
-
 .green-strip {
   height: 2vh;
   background-color: $green;
@@ -78,6 +75,7 @@ body {
 #meadow-signup {
   position: absolute;
   z-index: -1;
-  top: 670px;
+  bottom: 0;
+  width: 100vw;
 }
 

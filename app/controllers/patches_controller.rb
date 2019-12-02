@@ -22,7 +22,9 @@ class PatchesController < ApplicationController
 
   def plant
     @patch = Patch.find(params[:id])
-    @available_plants = Plant.all - @patch.plants
+    # @available_plants = Plant.all - @patch.plants
+    # Score.joins(:submission).where(:submissions => {:task_id => 1})
+    @recommended_plants = Plant.this_month_recommended - @patch.plants
     authorize @patch
   end
 
