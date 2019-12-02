@@ -48,4 +48,3 @@ class PatchPlantsController < ApplicationController
     params.require(:patch_plant).permit(:plant_date, :plant)
   end
 end
-
