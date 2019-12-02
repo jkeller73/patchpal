@@ -1,8 +1,30 @@
 
 .banner-crop {
-  height: 500px;
+  height: 55vh;
+  background-image: asset_url('plants.jpg');
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
+}
+
+.patches-container {
+  min-height: 95vh;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.patchlist {
+  color: white;
+  padding: 10px;
+  width: 35vw;
+  background-color: #9ec98b;
+  text-align: center;
 }
 
 .welcome {
@@ -17,13 +39,14 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 60%;
-  height: 30%;
+  width: 40vw;
+  height: 38vh;
   margin: auto;
-  border-radius: 20px;
+  border-radius: 3px;
 }
-.potatos {
-  height: 200px;
+.card-image {
+  height: 15vh;
+  background-image: asset_url('lettuces.jpg');
   background-size: cover;
   background-position: bottom;
 }
@@ -32,11 +55,12 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
   position: relative;
 }
 
 .patches-link {
+  font-size: 30px;
   color: $green;
   &:hover {
     text-decoration: underline;
@@ -44,13 +68,27 @@
   }
 }
 
-.patchlist {
-  color: white;
-  background-color: rgba($green, 0.6);
-  //margin-left: 225px;
-  //padding: 20px 700px 0px 0px;
-  width: 100%;
+// The edit/delete buttons
+.patch-links {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  a {
+    font-size: 12px;
+    font-family: 'Permanent Marker';
+    color: white;
+    padding: 5px;
+    background-color: $green;
+    border-radius: 2px;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: white;
+  }
 }
+
+// -----------------------
 
 .card-trip-infos {
   vertical-align: middle;
@@ -58,5 +96,14 @@
 }
 
 .patches-location {
-  color: $green;
+  font-family: 'Open Sans';
+  font-size: 15px;
+  color: #393939;
+  text-align: left;
+  padding-left: 20px;
+  margin: 0;
+}
+
+h2 {
+  padding: 0;
 }
