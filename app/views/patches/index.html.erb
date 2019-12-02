@@ -1,34 +1,24 @@
 
 <div class="patchindex">
   <div class="banner-crop" style="background-image: url('https://images.unsplash.com/photo-1487147264018-f937fba0c817?ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80');">
-    <h2 class="welcome">Welcome, Robin Smith</h2>
+    <h2 class="welcome">Welcome, <%= current_user.first_name+" "+current_user.last_name %> </h2>
   </div>
   <div class="green-strip"></div>
   <br>
 
     <div class="card-patch">
       <h2 class="patchlist"> YOUR PATCHES:</h2>
-      <img src="<%= asset_url('apple.png') %>"/>
+        <div class="potatos" style="background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');">
+        </div>
       <div class="card-trip-infos">
-        <div>
+        <div class="textpatch">
 
             <% @patches.each do |patch|  %>
-            <%= link_to patch_path(patch) do  %>
-             <h2> <%= patch.name %> </h2>
+             <h2> <%= link_to patch.name, patch_path(patch), class: "patches-link" %> </h2>
+             <h4 class="patches-location"><%= patch.address%></h4>
             <% end %>
-            <h3><%= patch.address %></h3>
-            <% end %>
-
-          <h2>patch name</h2>
-          <p>Patch description here!</p>
         </div>
-        <!--<a class="btn btn-viewpatch" href="#">View Patch</a> -->
-        <%= link_to "View Patch", patches_path(@patch) %>
+
       </div>
     </div>
-
-
-
-
-
 </div>
