@@ -62,6 +62,7 @@ body {
 .container-new-patch {
   display: flex;
   justify-content: center;
+  position: relative;
   // flex-direction: column;
 }
 
@@ -209,14 +210,14 @@ body {
 #meadow {
   width: 100vw;
   position: absolute;
-  top: 115vh;
+  bottom: 0;
   z-index: -1;
 }
 
 #man {
   position: absolute;
   left: 0px;
-  bottom: -398px;
+  bottom: 0;
   z-index: -1;
 }
 

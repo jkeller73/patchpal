@@ -21,6 +21,8 @@ vegetable_suffixes = ['tomato-supersweet/txz61714TM', 'carrot-mokum-f1-hybrid/76
 'broad-bean-jubilee-hysor/802TM','parsley-laura/862TM', 'basil-christmas/4886TM', 'coriander/481TM',
 'lettuce-sweet-success-icebergromaine/TT50586TM', 'radish-mars-f1-hybrid/tr54728TM', 'cucumber-diva/TT52081TM']
 
+plant_images = ['tomato.png', 'carrots.png', 'parsnip.jpg', 'leek.png', 'onionwhite.png', 'onionred.png', 'courgette.jpg', 'pumpkin.png', 'squash.jpg', 'broccoli.png', 'brusselsprouts.png', 'cabbage.png', 'kale.png', 'swisschard.png', 'swisschard.png', 'beetroot.png', 'sweetpepper.png', 'chillipepper.png', 'peas.jpg', 'broadbean.jpg', 'parsley.jpg', 'basil.jpg', 'coriander.jpg', 'cabbage.png', 'cabbage.png']
+
 array = []
 vegetable_suffixes.each do |suffix|
   # Description Tab
@@ -30,6 +32,7 @@ vegetable_suffixes.each do |suffix|
 end
 
 # def scrape(suffix)
+counter = 0
 array.each do |url|
   description = ''
   hardiness = ''
@@ -47,8 +50,10 @@ array.each do |url|
       description: description,
       hardiness: hardiness,
       position_in: position_in,
-      name: url.split("/p/").last.split("-").first
+      name: url.split("/p/").last.split("-").first,
+      photo: plant_images[counter]
     }
+  counter += 1
   end
   html_doc.search('#sowing').each do |element|
     results[:sowing] = element.text.strip
@@ -57,8 +62,10 @@ array.each do |url|
     results[:more_info] = element.text.strip
   end
 
-  results[:photo] = html_doc.search('.mainImage img').first['data-src']
+  # results[:photo] = html_doc.search('.mainImage img').first['data-src']
   plant = Plant.create!(results)
+  puts plant.photo
+
 
 
   html_doc.search('.periods .sowing').each do |element|
