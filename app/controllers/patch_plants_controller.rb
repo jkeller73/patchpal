@@ -6,8 +6,8 @@ class PatchPlantsController < ApplicationController
 
   def create
     @patch = Patch.find(params[:patch_id])
-    @recommended_plants = Plant.this_month_recommended - @patch.plants
-    @other_plants = Plant.all - @recommended_plants
+    # @recommended_plants = Plant.this_month_recommended - @patch.plants
+    # @other_plants = Plant.all - @recommended_plants
     @plant = Plant.find(patch_plant_params[:plant])
     @patch_plant = PatchPlant.new
     @patch_plant.plant = @plant
@@ -16,7 +16,7 @@ class PatchPlantsController < ApplicationController
     if @patch_plant.save
       respond_to do |format|
         @recommended_plants = Plant.this_month_recommended - @patch.plants
-        @other_plants = Plant.all - @recommended_plants
+        @other_plants = (Plant.all - @recommended_plants) - @patch.plants
         format.html { redirect_to plant_patch_path(@patch) }
         format.js
       end
