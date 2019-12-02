@@ -33,15 +33,19 @@ class PatchPlantsController < ApplicationController
   def destroy
     @patch_plant = PatchPlant.find(params[:id])
     authorize @patch_plant
-    @patch_plant.destroy
-    redirect_to plant_patch_path(@patch_plant.patch)
+    @id = @patch_plant.id
+    if @patch_plant.destroy
+        respond_to do |format|
+        format.html { redirect_to plant_patch_path(@patch_plant.patch) }
+        format.js
+      end
+    end
   end
 
   private
 
   def patch_plant_params
     params.require(:patch_plant).permit(:plant_date, :plant)
-
   end
 end
 
