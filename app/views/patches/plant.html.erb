@@ -1,17 +1,16 @@
 <div class="banner-new-patch">
   <h1>Let's get started</h1>
-  <div class="search-bar">
-
-  </div>
+  <!-- <div class="search-bar">
+  </div> -->
 </div>
 <div class="green-strip"></div>
 <div class="container-new-patch">
-
   <div class="season-cards">
     <h2>'Tis the Season!</h2>
     <div class="container">
       <div class="row">
-        <% @available_plants.first(6).each do |plant| %>
+        <%# @available_plants.first(6).each do |plant| %>
+        <% @recommended_plants.each do |plant| %>
           <div class="cards col-sm-4">
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('veg.jpg')%>)">
                 <h4 id="vg-text"><%= plant.name.capitalize %></h4>
