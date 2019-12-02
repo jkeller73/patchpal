@@ -14,7 +14,11 @@ class PatchPlantsController < ApplicationController
     @patch_plant.patch = @patch
     authorize @patch_plant
     if @patch_plant.save
-      redirect_to plant_patch_path(@patch)
+      respond_to do |format|
+        @available_plants = Plant.all - @patch.plants
+        format.html { redirect_to plant_patch_path(@patch) }
+        format.js
+      end
     else
       render :new
     end

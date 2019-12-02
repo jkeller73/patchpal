@@ -1,0 +1,25 @@
+
+function refreshPage(newHTML) {
+  const newPage = document.querySelector('.season-cards');
+  newPage.innerHTML = newHTML
+}
+
+function addPlant(plantHTML) {
+  const plants = document.getElementById('veg-results');
+  plants.insertAdjacentHTML('beforeend', plantHTML);
+  // console.log(plants)
+}
+
+<% if @patch_plant.errors.any? %>
+  refreshPage('<%= j render "patches/add_patch_plant", available_plants: @available_plants, patch: @patch %>');
+<% else %>
+  addPlant(`<p><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete %>  </p>`);
+  refreshPage('<%= j render "patches/add_patch_plant", available_plants: @available_plants, patch: @patch %>');
+<% end %>
+
+
+// new js file
+// figure out which method is called when you click -
+// put 'respond to' in that method
+// do reverse of addPlant
+// make list of stuff on right into a partial
