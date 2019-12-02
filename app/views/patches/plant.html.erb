@@ -7,16 +7,15 @@
 <div class="container-new-patch">
   <div class="season-cards">
 
-    <%= render 'add_patch_plant', recommended_plants: @recommended_plants, patch: @patch %>
+    <%= render 'add_patch_plant', other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
 
   </div>
-
   <div class="patch-co">
     <div class="rel">
       <img class="leaf-avatar" alt="avatar" src="<%= asset_url('leaf.png') %>" />
       <div class="leaf-avatar co"></div>
       <h5><%= @patch.name %> Patch</h5>
-        <%= render 'remove_patch_plant', recommended_plants: @recommended_plants, patch: @patch %>
+        <%= render 'remove_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
     </div>
   </div>
   <img src="<%= asset_url('man.png') %>" alt="" id="man">
