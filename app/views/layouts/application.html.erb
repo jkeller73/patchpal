@@ -9,6 +9,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link rel="icon" href="https://img.icons8.com/color/48/000000/carrot.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body style="background-color: #FBFBFB;">
@@ -24,5 +25,9 @@
     <%= javascript_pack_tag 'application' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+  </script>
   </body>
 </html>
