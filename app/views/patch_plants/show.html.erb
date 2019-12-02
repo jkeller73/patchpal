@@ -5,21 +5,27 @@
 <div class="patch-plant-show-page">
   <div class="patch-plant-alerts">
     <img class="leaf-avatar-patch" alt="avatar" src="<%= asset_url('leaf.png') %>" />
-    <h3><span class="highlightme">Notifications:</span></h3>
+    <div class="co-patch"></div>
+    <h3><span class="highlightme">&nbsp;<%="#{@patch_plant.plant.name} Tracker"%>&nbsp;</span></h3>
     <br>
     <h5>When you planted it:</h5>
     <% if @patch_plant.plant_date == nil %>
-      <p><%= "You haven't planted it yet"  %></p>
+      <p><%= "You haven't planted your #{@patch_plant.plant.name.pluralize} yet!"  %></p>
     <% else %>
       <p><%= @patch_plant.plant_date %></p>
     <% end %>
 
-    <h5>When you harvested it:</h5>
-    <% if @patch_plant.harvest_date == nil %>
-      <p><%= "You haven't harvested it yet" %></p>
+    <% if @patch_plant.plant_date == nil %>
+    <% elsif @patch_plant.harvest_date == nil %>
+      <h5>When to harvest:</h5>
+      <p><%= "You should harvest your #{@patch_plant.plant.name.pluralize} in #{@patch_plant.harvest_date}" %></p>
     <% else %>
+      <h5>When you harvested it:</h5>
       <p><%= @patch_plant.harvest_date %></p>
     <% end %>
+  </div>
+  <div class="patch-plant-table-container">
+    <%= render 'shared/patch_plant_tables' %>
   </div>
 
   <div class="plant-container">
