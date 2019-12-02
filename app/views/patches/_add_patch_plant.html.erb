@@ -1,7 +1,7 @@
 <h2>'Tis the Season!</h2>
 <div class="container">
   <div class="row">
-    <% available_plants.first(6).each do |plant| %>
+    <% @recommended_plants.each do |plant| %>
       <div class="cards col-sm-4">
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('veg.jpg')%>)">
             <h4 id="vg-text"><%= plant.name.capitalize %></h4>
