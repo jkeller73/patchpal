@@ -17,6 +17,7 @@
       <div class="leaf-avatar co"></div>
       <h5><%= @patch.name %> Patch</h5>
         <%= render 'remove_patch_plant', available_plants: @available_plants, patch: @patch %>
+        <%= button_to "View", patch_plant_path(@patch)%>
     </div>
   </div>
   <img src="<%= asset_url('man.png') %>" alt="" id="man">
