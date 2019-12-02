@@ -15,7 +15,7 @@ class PatchPlantsController < ApplicationController
     authorize @patch_plant
     if @patch_plant.save
       respond_to do |format|
-        @available_plants = Plant.all - @patch.plants
+        @recommended_plants = Plant.all - @patch.plants
         format.html { redirect_to plant_patch_path(@patch) }
         format.js
       end

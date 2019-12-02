@@ -2,6 +2,26 @@
    <%= @patch_plant.plant.name.capitalize() %> | Patch Pal
   <% end %>
 
+<div class="patch-plant-show-page">
+  <div class="patch-plant-alerts">
+    <img class="leaf-avatar-patch" alt="avatar" src="<%= asset_url('leaf.png') %>" />
+    <h3><span class="highlightme">Notifications:</span></h3>
+    <br>
+    <h5>When you planted it:</h5>
+    <% if @patch_plant.plant_date == nil %>
+      <p><%= "You haven't planted it yet"  %></p>
+    <% else %>
+      <p><%= @patch_plant.plant_date %></p>
+    <% end %>
+
+    <h5>When you harvested it:</h5>
+    <% if @patch_plant.harvest_date == nil %>
+      <p><%= "You haven't harvested it yet" %></p>
+    <% else %>
+      <p><%= @patch_plant.harvest_date %></p>
+    <% end %>
+  </div>
+
   <div class="plant-container">
     <div class="row">
       <div class="col-6 plant-card">
@@ -12,20 +32,6 @@
         <h5>How to Sow</h5>
         <p><%= @patch_plant.plant.sowing %></p>
 
-        <h5>When you planted it:</h5>
-        <% if @patch_plant.plant_date == nil %>
-          <p><%= "You haven't planted it yet"  %></p>
-        <% else %>
-          <p><%= @patch_plant.plant_date %></p>
-        <% end %>
-
-        <h5>When you harvested it:</h5>
-        <% if @patch_plant.harvest_date == nil %>
-          <p><%= "You haven't harvested it yet" %></p>
-        <% else %>
-          <p><%= @patch_plant.harvest_date %></p>
-        <% end %>
-
       </div>
       <div class="col-6 calendar-container">
         <%= image_tag "cabbage.png", alt: "alttext", class: "veg-show-background-pic" %>
@@ -33,3 +39,4 @@
       </div>
     </div>
   </div>
+</div>

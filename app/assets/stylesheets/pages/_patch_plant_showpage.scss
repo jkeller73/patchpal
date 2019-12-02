@@ -1,0 +1,41 @@
+.patch-plant-alerts {
+  // border-style: solid;
+  // border-color: $green;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  width: 50vw;
+  margin: 5% auto 5% auto;
+  background-color: white;
+  padding: 3% 0 3% 3%;
+  h3 {
+    font-family: $headers-font;
+    text-align: center;
+  }
+  h5 {
+    font-family: $headers-font;
+    color: $green;
+  }
+  .highlightme {
+    background-color: #9ACA8E;
+  }
+}
+
+.leaf-avatar-patch {
+  width: 43px;
+  height: 43px;
+  // border-radius: 50%;
+  // border: solid 3px white;
+  position: absolute;
+  top: 130px;
+  right: 50%;
+}
+
+.co {
+  border-radius: 50%;
+  border: solid 3px white;
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  z-index: -1;
+  top: -30px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}

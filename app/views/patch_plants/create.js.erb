@@ -11,11 +11,11 @@ function addPlant(plantHTML) {
 }
 
 <% if @patch_plant.errors.any? %>
-  refreshPage('<%= j render "patches/add_patch_plant", available_plants: @available_plants, patch: @patch %>');
+  refreshPage('<%= j render "patches/add_patch_plant", recommended_plants: @recommended_plants, patch: @patch %>');
 <% else %>
     <% patch_plant = @patch.patch_plants.find_by(plant: @plant) %>
   addPlant(`<p id="patch_plant_<%= patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
-  refreshPage('<%= j render "patches/add_patch_plant", available_plants: @available_plants, patch: @patch %>');
+  refreshPage('<%= j render "patches/add_patch_plant", recommended_plants: @recommended_plants, patch: @patch %>');
 <% end %>
 
 
