@@ -1,31 +1,49 @@
+ <!-- Tab Code: -->
  <% content_for(:title) do %>
    <%= @patch_plant.plant.name.capitalize() %> | Patch Pal
   <% end %>
 
+  <!-- Page Code: -->
+
+<div class="patch-plant-show-page">
+  <h2><span class="highlightme">&nbsp;<%= @patch_plant.plant.name %>&nbsp;</span></h2>
+  <div class="patch-plant-alerts">
+    <img class="leaf-avatar-patch" alt="avatar" src="<%= asset_url('leaf.png') %>" />
+    <div class="co-patch"></div>
+    <h3><span class="highlightme">&nbsp;<%="Your #{@patch_plant.plant.name} Tracker"%>&nbsp;</span></h3>
+    <br>
+    <h5>When you planted :</h5>
+    <% if @patch_plant.plant_date == nil %>
+      <p><%= "You haven't planted your #{@patch_plant.plant.name.pluralize} yet!"  %></p>
+    <% else %>
+      <p><%= @patch_plant.plant_date %></p>
+    <% end %>
+
+    <% if @patch_plant.plant_date == nil %>
+    <% elsif @patch_plant.harvest_date == nil %>
+      <h5>When to harvest:</h5>
+      <p><%= "You should harvest your #{@patch_plant.plant.name.pluralize} in #{@patch_plant.harvest_date}" %></p>
+    <% else %>
+      <h5>When you harvested it:</h5>
+      <p><%= @patch_plant.harvest_date %></p>
+    <% end %>
+  </div>
+  <div class="patch-plant-table-container">
+    <h5><span class="highlightme patch-month-table">&nbsp;Month by Month&nbsp;</span></h5>
+    <%= render 'shared/patch_plant_tables' %>
+  </div>
+
   <div class="plant-container">
     <div class="row">
       <div class="col-6 plant-card">
-        <h2><span class="highlightme">&nbsp;<%= @patch_plant.plant.name %>&nbsp;</span></h2>
         <br>
-        <h5>The Basics</h5>
-        <p><%= @patch_plant.plant.description %></p>
+        <h5>What to Know</h5>
+        <p>Hardiness: <%= @patch_plant.plant.hardiness %></p>
+        <p>Where to Position: <%= @patch_plant.plant.position_in %></p>
         <h5>How to Sow</h5>
         <p><%= @patch_plant.plant.sowing %></p>
-
-        <h5>When you planted it:</h5>
-        <% if @patch_plant.plant_date == nil %>
-          <p><%= "You haven't planted it yet"  %></p>
-        <% else %>
-          <p><%= @patch_plant.plant_date %></p>
-        <% end %>
-
-        <h5>When you harvested it:</h5>
-        <% if @patch_plant.harvest_date == nil %>
-          <p><%= "You haven't harvested it yet" %></p>
-        <% else %>
-          <p><%= @patch_plant.harvest_date %></p>
-        <% end %>
-
+        <h5>How to Grow</h5>
+        <p><%= @patch_plant.plant.more_info %></p>
       </div>
       <div class="col-6 calendar-container">
         <%= image_tag "cabbage.png", alt: "alttext", class: "veg-show-background-pic" %>
@@ -33,3 +51,4 @@
       </div>
     </div>
   </div>
+</div>
