@@ -54,7 +54,6 @@
   }
   .highlightme {
     background-color: #9ACA8E;
-
   }
   .patch-table {
     margin: 0 auto 0 auto;
@@ -64,4 +63,14 @@
 
 .patch-plant-show-background-pic {
   width: 100%vw;
+}
+
+.patch-plant-show-page {
+  .highlightme {
+    background-color: #9ACA8E;
+  }
+  h2, h1 {
+    color: white;
+    margin: 3% 0 0 3%;
+  }
 }
