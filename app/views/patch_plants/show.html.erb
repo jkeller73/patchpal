@@ -1,14 +1,18 @@
+ <!-- Tab Code: -->
  <% content_for(:title) do %>
    <%= @patch_plant.plant.name.capitalize() %> | Patch Pal
   <% end %>
 
+  <!-- Page Code: -->
+
 <div class="patch-plant-show-page">
+  <h2><span class="highlightme">&nbsp;<%= @patch_plant.plant.name %>&nbsp;</span></h2>
   <div class="patch-plant-alerts">
     <img class="leaf-avatar-patch" alt="avatar" src="<%= asset_url('leaf.png') %>" />
     <div class="co-patch"></div>
-    <h3><span class="highlightme">&nbsp;<%="#{@patch_plant.plant.name} Tracker"%>&nbsp;</span></h3>
+    <h3><span class="highlightme">&nbsp;<%="Your #{@patch_plant.plant.name} Tracker"%>&nbsp;</span></h3>
     <br>
-    <h5>When you planted it:</h5>
+    <h5>When you planted :</h5>
     <% if @patch_plant.plant_date == nil %>
       <p><%= "You haven't planted your #{@patch_plant.plant.name.pluralize} yet!"  %></p>
     <% else %>
@@ -32,13 +36,14 @@
   <div class="plant-container">
     <div class="row">
       <div class="col-6 plant-card">
-        <h2><span class="highlightme">&nbsp;<%= @patch_plant.plant.name %>&nbsp;</span></h2>
         <br>
-        <h5>The Basics</h5>
-        <p><%= @patch_plant.plant.description %></p>
+        <h5>What to Know</h5>
+        <p>Hardiness: <%= @patch_plant.plant.hardiness %></p>
+        <p>Where to Position: <%= @patch_plant.plant.position_in %></p>
         <h5>How to Sow</h5>
         <p><%= @patch_plant.plant.sowing %></p>
-
+        <h5>How to Grow</h5>
+        <p><%= @patch_plant.plant.more_info %></p>
       </div>
       <div class="col-6 calendar-container">
         <%= image_tag "cabbage.png", alt: "alttext", class: "veg-show-background-pic" %>
