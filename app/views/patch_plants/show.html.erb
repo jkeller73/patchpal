@@ -46,7 +46,7 @@
         <p><%= @patch_plant.plant.more_info %></p>
       </div>
       <div class="col-6 calendar-container">
-        <%= image_tag "cabbage.png", alt: "alttext", class: "veg-show-background-pic" %>
+        <%= image_tag @patch_plant.plant.photo, alt: "alttext", class: "veg-show-background-pic" %>
         <%= link_to "Back to Patch", patch_path(@patch_plant.patch), class: "green-button" %>
       </div>
     </div>
