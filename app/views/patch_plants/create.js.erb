@@ -27,16 +27,9 @@ function addPatchPlant(plantHTML) {
   const patch_plants = document.getElementById('patch-plants')
   patch_plants.insertAdjacentHTML('beforeend', plantHTML);
 }
-  // patch_plants.insertAdjacentHTML('beforeend', plantHTML);
-
-// var patch_plants = document.getElementById('patch-plants')
-// if (patch_plants) {
-//   patch_plants.insertAdjacentHTML('afterbegin',
-//   `<%= j render 'patches/patch_plants', patch: @patch %>`)
-// }
 
 if (<%= @page == 'update_patch' %>) {
-  addPatchPlant(`<p id="patch_plant_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
+  addPatchPlant(`<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('veg.jpg')%>)"><h4 id="vg-text_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
   refreshPatch('<%= j render "patches/update_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
 } else {
   addPlant(`<p id="patch_plant_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);

@@ -1,24 +1,17 @@
 
-.patch-showpage-container {
-  background-color: #9ACA8E;
-  margin: 3% auto 5% auto;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  padding-bottom: 8%;
-  width: 80vw;
-  h3 {
-    font-family: $headers-font;
-    padding: 3% 0 3% 7%;
-  }
-  .infopatch {
-    background-color: white;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    padding: 3% 3% 3% 3%;
-    margin: 0 auto 0 auto;
-    width: 70vw;
-  }
+h3 {
+  font-family: $headers-font;
+  padding: 3% 0 3% 7%;
 }
+.infopatch {
+  background-color: white;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 3% 2% 3% 2%;
+  margin: 0 auto 0 auto;
+  width: 70vw;
+}
+
 
 h1 {
     margin-bottom: 5%;
@@ -37,8 +30,6 @@ h1 {
   color: white;
 
 }
-
-
 
 .infopatch li {
   list-style: none;
@@ -128,3 +119,5 @@ h1 {
   top: -20px;
   left: 48%;
 }
+
+
