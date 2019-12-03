@@ -37,6 +37,7 @@ class PatchPlantsController < ApplicationController
     @patch_plant = PatchPlant.find(params[:id])
     authorize @patch_plant
     @id = @patch_plant.id
+    @page = params[:page]
     if @patch_plant.destroy
         respond_to do |format|
         format.html { redirect_to plant_patch_path(@patch_plant.patch) }
