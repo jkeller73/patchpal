@@ -3,13 +3,19 @@ function removePlant() {
   const plant = document.getElementById('patch_plant_<%= @id %>');
   plant.remove();
 }
-removePlant();
+
 
 // --- removing plants from the patch show page: ---- //
 
-// function removePatchPlant() {
-//   const plant = document.querySelector('');
-//     plant.remove();
-// }
+function removePatchPlant() {
+  const plant = document.getElementById('delete-patch-plant-<%= @id %>');
+    plant.remove();
+}
 
-// removePatchPlant();
+
+
+if (<%= @page == 'remove patch plant' %>) {
+  removePatchPlant();
+} else {
+  removePlant();
+}

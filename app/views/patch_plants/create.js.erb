@@ -20,16 +20,22 @@ function addPlant(plantHTML) {
 // ---- Patch Update Functions: -----
 function refreshPatch(newHTML) {
   const patchPage = document.querySelector('.other-avaiable-plants');
-  patchPage.innerHTML = newHTML
+  if (patchPage) {
+    patchPage.innerHTML = newHTML
+  }
 }
 
 function addPatchPlant(plantHTML) {
   const patch_plants = document.getElementById('patch-plants')
-  patch_plants.insertAdjacentHTML('beforeend', plantHTML);
+  if(patch_plants) {
+    patch_plants.insertAdjacentHTML('beforeend', plantHTML);
+  }
 }
 
 if (<%= @page == 'update_patch' %>) {
-  addPatchPlant(`<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('veg.jpg')%>)"><h4 id="vg-text_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
+  addPatchPlant(`<div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)">
+    <li><%= link_to @patch_plant.plant.name.pluralize, patch_plant_path(@plant), class: "index-text" %></li>
+  </div>`);
   refreshPatch('<%= j render "patches/update_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
 } else {
   addPlant(`<p id="patch_plant_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
