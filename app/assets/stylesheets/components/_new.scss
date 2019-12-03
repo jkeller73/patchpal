@@ -6,7 +6,7 @@ body {
   background-image: asset_url("started.jpg");
   background-size: cover;
   background-position: center;
-  height: 55vh;
+  height: 45vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,37 +16,37 @@ body {
   }
 }
 
-.search-bar {
-  width: 40vw;
-  position: relative;
-  top: 10vh;
+// .search-bar {
+//   width: 40vw;
+//   position: relative;
+//   top: 10vh;
 
-}
+// }
 
-.search-form-control {
-  position: relative;
-  top: -25px;
-}
+// .search-form-control {
+//   position: relative;
+//   top: -25px;
+// }
 
-.search-form-control .btn {
-  background-color: #75CD4E;
-  position: absolute;
-  top: 8px;
-  bottom: 8px;
-  right: 8px;
-}
+// .search-form-control .btn {
+//   background-color: #75CD4E;
+//   position: absolute;
+//   top: 8px;
+//   bottom: 8px;
+//   right: 8px;
+// }
 
-.search-form-control .form-control {
-  height: 3.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
-}
+// .search-form-control .form-control {
+//   height: 3.5rem;
+//   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+//   border: 1px solid #E7E7E7;
+// }
 
-.search-form-control .form-control:focus {
-  border: 1px solid #1EDD88;
-  outline: none !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
+// .search-form-control .form-control:focus {
+//   border: 1px solid #1EDD88;
+//   outline: none !important;
+//   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+// }
 
 // .btn-new {
 //   background-color: $light-green;
@@ -65,22 +65,6 @@ body {
   position: relative;
   // height: 100vh;
   // flex-direction: column;
-}
-
-.drag-drop {
-  width: 40vh;
-  height: 25vh;
-  background-color: #6FB452;
-  border-radius: 5px;
-  margin: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2);
-  h3 {
-    font-size: 20px;
-    font-family: $headers-font;
-  }
 }
 
 // My patch section on RHS
@@ -109,7 +93,6 @@ body {
 }
 .rel {
   position: relative;
-  // padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -117,14 +100,12 @@ body {
   a {
     color: red;
   }
-  color: #393939;
+  p { color: #393939 !important; font-family: "Open Sans"; }
 
 }
 .leaf-avatar {
   width: 43px;
   height: 43px;
-  // border-radius: 50%;
-  // border: solid 3px white;
   position: absolute;
   top: -20px;
 }
@@ -154,12 +135,16 @@ body {
   padding: 40px;
   margin-top: 50px;
   margin-bottom: 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
   h2 {
-    width: 400px;
+    width: 100%;
     height: 80px;
     padding: 10px;
     background-color: rgba(98, 169, 67, 0.5);
     color: white;
+    margin: 10px 10px;
+    text-align: center;
   }
 }
 
@@ -182,8 +167,7 @@ body {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // margin-top: 15px;
-  // margin-right: 15px;
+  margin: auto;
 }
 
 #vg-text {
@@ -227,10 +211,5 @@ body {
   left: 0px;
   bottom: 0;
   z-index: -1;
-}
-
-.season-cards {
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 

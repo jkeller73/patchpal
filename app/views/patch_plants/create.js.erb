@@ -7,6 +7,7 @@ function refreshPage(newHTML) {
 function addPlant(plantHTML) {
   const plants = document.getElementById('veg-results');
   plants.insertAdjacentHTML('beforeend', plantHTML);
+  document.getElementById('patchBtn').classList.remove('d-none');
   // console.log(plants)
 }
 
