@@ -13,7 +13,7 @@ class Patch < ApplicationRecord
   has_many :weather_alerts, dependent: :destroy
 
   def update_weather
-    forecast = JSON.parse(open("http://api.openweathermap.org/data/2.5/forecast?lat=#{longitude}&lon=#{latitude}&APPID=#{ENV['WEATHER_API_KEY']}").read)
+    forecast = JSON.parse(open("http://api.openweathermap.org/data/2.5/forecast?lat=#{latitude}&lon=#{longitude}&APPID=#{ENV['WEATHER_API_KEY']}").read)
     days_array = forecast['list']
     @description = days_array[0]['weather'][0]['description']
     @temperature = (days_array[0]['main']['temp'] - 273.15).round
@@ -33,6 +33,23 @@ class Patch < ApplicationRecord
       else
         puts 'it has rained'
       end
+    end
+  end
+
+  def week_forecast
+    forecast = JSON.parse(open("http://api.openweathermap.org/data/2.5/forecast?lat=#{latitude}&lon=#{longitude}&APPID=#{ENV['WEATHER_API_KEY']}").read)
+    days_array = forecast['list']
+    good = [0, 3, 11, 19, 27, 35]
+    good.map do |index|
+      # [
+      #   days_array[index]['weather'][0]['description'],
+      #   (days_array[index]['main']['temp'] - 273.15).round
+      # ]
+      {
+        description: days_array[index]['weather'][0]['description'],
+        temperature: (days_array[index]['main']['temp'] - 273.15).round,
+        date: days_array[index]['dt_txt']
+      }
     end
   end
 end
