@@ -3,6 +3,36 @@
 <% end %>
 
 
+
+<div class="weatherforecast">
+  <h2>This weeks weather</h2>
+  <!-- <table>
+    <tr>
+      <%# @weekly_forecast.each do |day| %>
+        <th><%#= day[:date].split(' ').first %></th>
+      <%# end %>
+    </tr>
+    <tr>
+      <%# @weekly_forecast.each do |day| %>
+        <td><%#= day[:description] %></td>
+      <%# end %>
+    </tr>
+    <tr>
+      <%# @weekly_forecast.each do |day| %>
+        <td><%#= day[:temperature] %>°C</td>
+      <%# end %>
+    </tr>
+  </table> -->
+  <div class="everyday">
+    <% @weekly_forecast.each do |day| %>
+      <ul>
+        <li><h3><%= day[:date].split(' ').first %></h3></li>
+        <li><p><%= day[:description] %></p></li>
+        <li><p><%= day[:temperature] %>°C</p></li>
+      </ul>
+    <% end %>
+  </div>
+
 <div class="titlepatch">
   <h1><span class="highlightme">&nbsp;<%= @patch.name %>&nbsp;</span></h1>
 </div>
@@ -29,11 +59,13 @@
       <%= link_to '<button type="button" class="bti btn-success">Water</button>'.html_safe, complete_weather_alert_path(w_alert), method: :patch %>
     </div>
   <% end %>
+
 </div>
 
 <div class="patch-showpage-container">
   <h3><span class="highlightme">&nbsp;Your Plants:&nbsp;</span></h3>
   <div class="infopatch">
+
     <div id="patch-plants">
       <%= render 'patch_plants', patch: @patch %>
     </div>

@@ -1,6 +1,8 @@
 .veg-show-background-pic {
   width: 45vw;
   margin-bottom: 5%;
+  max-height: 50vh;
+  object-fit: cover;
 }
 .plant-card {
   background-color: white;
@@ -21,6 +23,7 @@
   }
   p {
     padding: 0 2% 2% 3%;
+    color: #393939;
   }
   .highlightme {
     background-color: #9ACA8E;
