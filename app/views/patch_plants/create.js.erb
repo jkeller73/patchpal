@@ -3,13 +3,18 @@ console.log('<%= params[:action] %>')
 console.log("<%= @patch_plant.id %>")
 function refreshPage(newHTML) {
   const newPage = document.querySelector('.season-cards');
-  newPage.innerHTML = newHTML
+  if (newPage) {
+    newPage.innerHTML = newHTML
+  }
 }
 
 function addPlant(plantHTML) {
   const plants = document.getElementById('veg-results');
-  plants.insertAdjacentHTML('beforeend', plantHTML);
+  if (plants) {
+   plants.insertAdjacentHTML('beforeend', plantHTML);
+  }
 }
+
 
 
 // ---- Patch Update Functions: -----
@@ -19,11 +24,18 @@ function refreshPatch(newHTML) {
 }
 
 function addPatchPlant(plantHTML) {
-  const patch_plants = document.getElementById('patch_plants')
-  patch_plants.insertAdjacentHTML('beforeend', plantHTML)
+  const patch_plants = document.getElementById('patch-plants')
+  patch_plants.insertAdjacentHTML('beforeend', plantHTML);
 }
+  // patch_plants.insertAdjacentHTML('beforeend', plantHTML);
 
-if (<%= @page == 'patch_show' %>) {
+// var patch_plants = document.getElementById('patch-plants')
+// if (patch_plants) {
+//   patch_plants.insertAdjacentHTML('afterbegin',
+//   `<%= j render 'patches/patch_plants', patch: @patch %>`)
+// }
+
+if (<%= @page == 'update_patch' %>) {
   addPatchPlant(`<p id="patch_plant_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
   refreshPatch('<%= j render "patches/update_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
 } else {

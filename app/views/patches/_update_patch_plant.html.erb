@@ -4,7 +4,7 @@
       <div class="cards col-sm-4">
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('veg.jpg')%>)">
             <h4 id="vg-text"><%= plant.name.capitalize %></h4>
-            <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'new_patch'), remote: true, id: "plus-button", method: :post %>
+            <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch'), remote: true, id: "plus-button", method: :post %>
           </div>
       </div>
     <% end %>
@@ -15,7 +15,7 @@
       <div class="cards col-sm-4">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('veg.jpg')%>)">
           <h4 id="vg-text"><%= plant.name.capitalize %></h4>
-          <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'new_patch'), remote: true, id: "plus-button", method: :post %>
+          <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch'), remote: true, id: "plus-button", method: :post %>
         </div>
       </div>
     <% end %>
