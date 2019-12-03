@@ -3,7 +3,7 @@
 <div class="registration">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-    <div class="form-registration">
+    <div class="form-registration" data-aos="fade-up" data-aos-duration="650">
       <!-- avatar -->
       <%= f.input :first_name,
                   required: true,
@@ -28,7 +28,8 @@
       </div>
     </div>
   <% end %>
-  <img id="meadow-signup"src="<%= asset_url('meadow2.png') %>" >
+  <img id="meadow-signup" src="<%= asset_url('meadowbig2.png') %>" >
+  <img id="woman-signup" src="<%= asset_url('woman.png') %>" data-aos="fade-left" data-aos-duration="750">
 </div>
 
 

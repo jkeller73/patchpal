@@ -10,21 +10,29 @@
   }
 }
 
-.container-form-patch {
-  width: 50vw;
-  background-color: white;
-  margin: 5% auto 5% auto;
-  padding: 5% 0 10% 0;
+.wrapper-patch {
+  width: 100vw;
+  height: 90vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  justify-content: center;
+  align-items: center;
+}
+
+.container-form-patch {
+  width: 35vw;
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   .input {
     width: 60vw;
   }
   h2 {
     font-family: $headers-font;
+    font-size: 36px;
     text-align: center;
-    margin: auto;
     color: white;
     padding: 0%;
   }
@@ -32,24 +40,24 @@
     background-color: #9ACA8E;
   }
   .new-patch-text {
-    margin-bottom: 15%;
+    margin-bottom: 10%;
   }
 }
 
 #new_patch {
-  width: 70%;
+  width: 85%;
   margin: auto;
 }
 
 #meadow-new-form {
+  width: 100vw;
   position: absolute;
-  bottom: -8%;
-  right: -3%;
+  bottom: 0;
   z-index: -1;
 }
 
-.new-patch-page-container {
-  position: relative;
-}
+// .new-patch-page-container {
+//   position: relative;
+// }
 
 

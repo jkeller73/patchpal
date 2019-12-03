@@ -4,14 +4,16 @@
     <h2 class="welcome">Welcome, <%= current_user.first_name+" "+current_user.last_name %> </h2>
   </div>
   <div class="green-strip"></div>
-  <br>
+  <div class="wrapper-avatar">
+    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+  </div>
   <div class="header-container">
     <h2 class="patchlist"> YOUR PATCHES:</h2>
   </div>
   <div class="patches-container">
 
     <% @patches.each do |patch|  %>
-    <div class="card-patch">
+    <div class="card-patch hvr-grow">
       <div class="card-trip-infos">
         <div class="card-image"></div>
         <div class="green-strip"></div>

@@ -1,7 +1,7 @@
 .registration {
    width: 100vw;
    min-height: 50vh;
-   height: 100vh;
+   height: auto;
    display: flex;
    justify-content: center;
    position: relative;
@@ -12,6 +12,7 @@
   width: 30vw;
   padding: 25px;
   margin-top: 25px;
+  margin-bottom: 25px;
   background-color: white;
   position: relative;
   border-radius: 7px;
@@ -77,5 +78,13 @@ body {
   z-index: -1;
   bottom: 0;
   width: 100vw;
+}
+
+#woman-signup {
+  height: 88vh;
+  position: absolute;
+  bottom: 0;
+  z-index: -2;
+  right: 120px;
 }
 
