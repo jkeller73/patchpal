@@ -5,6 +5,7 @@
   <%= f.error_notification %>
     <div class="form-registration">
       <!-- avatar -->
+      <%= f.input :avatar, as: :file %>
       <%= f.input :first_name,
                   required: true,
                   input_html: { autocomplete: "first_name" }%>
