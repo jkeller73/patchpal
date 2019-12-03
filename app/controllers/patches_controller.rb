@@ -13,7 +13,10 @@ class PatchesController < ApplicationController
     @weekly_forecast = @patch.week_forecast
     @alerts = @patch.alerts.where(completed: false)
     @weather_alerts = @patch.weather_alerts.where(completed: false)
+    @recommended_plants = Plant.this_month_recommended - @patch.plants
+    @other_plants = Plant.all - @recommended_plants
     authorize @patch
+    @plants = Plant.all
   end
 
   def new

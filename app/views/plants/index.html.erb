@@ -10,13 +10,17 @@
       </div>
       <div class="row">
         <% @plants.order(:name).each do |plant| %>
-
           <div class="cards col-sm-4">
+
               <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url(plant.photo)%>)">
+
                 <h3><%= link_to plant.name, plant_path(plant), class: "index-text" %></h3>
               </div>
           </div>
         <% end %>
       </div>
     </div>
-  </div>
+    <img id="smallplant" src="<%= asset_url('smallplant.png') %>">
+    <img id="mediumplant" src="<%= asset_url('mediumplant.png') %>">
+    <img id="largeplant" src="<%= asset_url('largeplant.png') %>">
+</div>

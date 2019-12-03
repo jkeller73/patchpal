@@ -1,0 +1,21 @@
+<div class="add-extra-veg-container">
+  <!-- <div class="container">
+    <div class="row">
+      <%# recommended_plants.each do |plant| %>
+        <div class="cards col-sm-4">
+            <div class="card-category" %>)">
+              <h4 id="vg-text"><%#= plant.name.capitalize %></h4>
+              <%#= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch'), remote: true, id: "plus-button", method: :post %>
+            </div>
+        </div>
+      <%# end %>
+    </div> -->
+    <h2>All plants</h2>
+      <% other_plants.each do |plant| %>
+        <div class="cards col-sm-4">
+            <h4 id="veg-text"><%= plant.name.capitalize %></h4>
+            <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch'), remote: true, id: "patch-plus-button", method: :post %>
+        </div>
+      <% end %>
+  </div>
+</div>

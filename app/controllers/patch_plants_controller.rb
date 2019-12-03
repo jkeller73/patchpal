@@ -5,6 +5,7 @@ class PatchPlantsController < ApplicationController
   end
 
   def create
+    # raise
     @patch = Patch.find(params[:patch_id])
     # @recommended_plants = Plant.this_month_recommended - @patch.plants
     # @other_plants = Plant.all - @recommended_plants
@@ -12,6 +13,7 @@ class PatchPlantsController < ApplicationController
     @patch_plant = PatchPlant.new
     @patch_plant.plant = @plant
     @patch_plant.patch = @patch
+    @page = params[:page]
     authorize @patch_plant
     if @patch_plant.save
       respond_to do |format|
@@ -35,6 +37,7 @@ class PatchPlantsController < ApplicationController
     @patch_plant = PatchPlant.find(params[:id])
     authorize @patch_plant
     @id = @patch_plant.id
+    @page = params[:page]
     if @patch_plant.destroy
         respond_to do |format|
         format.html { redirect_to plant_patch_path(@patch_plant.patch) }
