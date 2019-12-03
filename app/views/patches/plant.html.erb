@@ -17,9 +17,13 @@
       <h5><%= @patch.name %> Patch</h5>
         <%= render 'remove_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
     </div>
-    <%= link_to '<button type="button" class="btn btn-success">See my patches</button>'.html_safe, patches_path %>
+    <% if @patch.plants != [] %>
+      <%= link_to '<button type="button" class="btn btn-success" id="patchBtn">See my patch</button>'.html_safe, patches_path %>
+    <% else %>
+      <%= link_to '<button type="button" class="btn btn-success d-none" id="patchBtn">See my patch</button>'.html_safe, patches_path %>
+    <% end %>
   </div>
   <img src="<%= asset_url('man.png') %>" alt="" id="man">
-  <img src="<%= asset_url('meadow.png') %>" alt="" id="meadow">
+  <img src="<%= asset_url('meadowbig2.png') %>" alt="" id="meadow">
 </div>
 

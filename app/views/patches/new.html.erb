@@ -2,21 +2,22 @@
  Let's Get Started | Patch Pal
 <% end %>
 
-<div class="new-patch-page-container">
+<!-- <div class="new-patch-page-container">
   <div class="banner-new-patch">
     <h1>Let's get started</h1>
   </div>
-  <div class="green-strip"></div>
-  <div class="container-form-patch">
-    <div class="new-patch-text">
-        <h2><span class="highlightme">&nbsp;Create Your Patch&nbsp;</span></h2>
+  <div class="green-strip"></div> -->
+  <div class="wrapper-patch">
+    <div class="container-form-patch">
+      <div class="new-patch-text">
+          <h2><span class="highlightme">&nbsp;Create Your Patch&nbsp;</span></h2>
+      </div>
+      <%= simple_form_for(@patch) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.button :submit, "Create!", class: "form-actions btn-flat"%>
+      <% end %>
     </div>
-    <%= simple_form_for(@patch) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :address %>
-      <%= f.submit class:"submit-button" %>
-    <% end %>
-  </div>
 
-  <img src="<%= asset_url('meadow2.png') %>" alt="" id="meadow-new-form">
-</div>
+    <img src="<%= asset_url('meadowbig.png') %>" alt="" id="meadow-new-form">
+  </div>

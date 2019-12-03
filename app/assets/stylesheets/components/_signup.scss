@@ -1,7 +1,7 @@
 .registration {
    width: 100vw;
    min-height: 50vh;
-   height: 100vh;
+   height: auto;
    display: flex;
    justify-content: center;
    position: relative;
@@ -12,6 +12,7 @@
   width: 30vw;
   padding: 25px;
   margin-top: 25px;
+  margin-bottom: 25px;
   background-color: white;
   position: relative;
   border-radius: 7px;
