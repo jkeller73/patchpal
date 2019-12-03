@@ -4,7 +4,7 @@
 
 
 <div class="titlepatch">
-  <h1><%= @patch.name %></h1>
+  <h1><span class="highlightme">&nbsp;<%= @patch.name %>&nbsp;</span></h1>
 </div>
 
 <div class="patch-show-alerts">
@@ -31,20 +31,32 @@
   <% end %>
 </div>
 
-
-
 <div class="patch-showpage-container">
+  <h3>Your Plants:</h3>
   <div class="infopatch">
     <p><%#= @patch.address %></p>
-    <div class="plants">
-    <% @patch.patch_plants.each do |plant| %>
-      <div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)">
-        <li><%= link_to plant.plant.name, patch_plant_path(plant), class: "index-text" %></li>
-      </div>
-    <% end %>
-  </div>
+    <div id="patch-plants">
+      <% @patch.patch_plants.each do |plant| %>
+        <div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)">
+          <li><%= link_to plant.plant.name.pluralize, patch_plant_path(plant), class: "index-text" %></li>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-
+  <div class="other-avaiable-plants">
+    <%= render 'update_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
+    <%# raise %>
+    <!-- <div class="row">
+      <%# @plants.each do |plant| %>
+        <div class="cards col-sm-4">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url('veg.jpg')%>)">
+            <h4 id="vg-text"><%#= plant.name.capitalize %></h4>
+            <%#= button_to "+", patch_patch_plants_path(@patch, patch_plant: { plant: plant }, page: "patch_show"), remote: true, id: "plus-button", method: :post %>
+          </div>
+        </div>
+      <%# end %>
+    </div>
+  </div> -->
 
 </div>

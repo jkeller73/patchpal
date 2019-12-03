@@ -13,6 +13,7 @@ class PatchesController < ApplicationController
     @alerts = @patch.alerts.where(completed: false)
     @weather_alerts = @patch.weather_alerts.where(completed: false)
     authorize @patch
+    @plants = Plant.all
   end
 
   def new
