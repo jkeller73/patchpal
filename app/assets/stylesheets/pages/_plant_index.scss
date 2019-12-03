@@ -27,9 +27,10 @@
 }
 
 .index-cards {
+  position: relative;
   background-color: white;
   width: 80vw;
-  margin: 1% auto 3% auto;
+  margin: 3% auto 3% auto;
   padding-top: 5%;
   padding-bottom: 5%;
   box-shadow: 5px 5px 15px, rgba(0, 0, 0, 0.2);
@@ -51,6 +52,29 @@
     background-color: $green;
     color: white;
   }
+}
+
+// plant images
+
+#smallplant {
+  height: 20vh;
+  position: absolute;
+  left: 38px;
+  top: 11%;
+}
+
+#mediumplant {
+  height: 25vh;
+  position: absolute;
+  right: 35px;
+  top: 45%;
+}
+
+#largeplant {
+  height: 30vh;
+  position: absolute;
+  left: 25px;
+  top: 85%;
 }
 
 // Grow hover effect
