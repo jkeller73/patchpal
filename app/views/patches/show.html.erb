@@ -13,7 +13,7 @@
     <p><%#= @patch.address %></p>
     <div class="plants">
     <% @patch.patch_plants.each do |plant| %>
-      <div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)">
+      <div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url(plant.plant.photo) %>)" >
         <li><%= link_to plant.plant.name, patch_plant_path(plant), class: "index-text" %></li>
       </div>
     <% end %>
