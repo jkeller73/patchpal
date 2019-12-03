@@ -2,7 +2,7 @@
 <div class="banner-login">
   <div class="login" style="background-image: asset_url('meadow2.png')">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
+        <div class="form-inputs" data-aos="fade-up" data-aos-duration="650">
           <%= f.input :email,
                       required: false,
                       autofocus: true,
