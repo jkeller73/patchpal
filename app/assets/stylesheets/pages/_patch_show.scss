@@ -2,6 +2,9 @@
 h3 {
   font-family: $headers-font;
   padding: 3% 0 3% 7%;
+  .highlightme {
+    background-color: #9ACA8E;
+  }
 }
 .infopatch {
   background-color: white;
@@ -118,6 +121,15 @@ h1 {
   position: absolute;
   top: -20px;
   left: 48%;
+}
+
+.add-extra-veg-container {
+  width: 70vw;
+  background-color: white;
+  margin: 5% auto 0 auto;
+  padding: 0 3% 0 3%;
+  border-style: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 
