@@ -51,6 +51,12 @@
 
   <%= render 'update_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
 <div class="patch-container">
+  <div class="add-plant-btn-container">
+    <button type="button" class="add-plants-btn" data-toggle="modal" data-target="#exampleModalLong">
+      Add More Plants!
+    </button>
+  </div>
+  <h2>Your Patch</h2>
   <div class="infopatch">
     <div id="patch-plants">
       <%= render 'patch_plants', patch: @patch %>
