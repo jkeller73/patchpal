@@ -15,21 +15,31 @@
     <h2 class="patchlist"> YOUR PATCHES:</h2>
   </div>
   <div class="patches-container">
+  <% if @patches.length == 0 %>
 
-    <% @patches.each do |patch|  %>
-    <div class="card-patch hvr-grow">
-      <div class="card-trip-infos">
-        <div class="card-image"></div>
-        <div class="green-strip"></div>
-        <div class="textpatch">
-          <h2> <%= link_to patch.name, patch_path(patch), class: "patches-link" %> </h2>
-          <h4 class="patches-location"><i class="fas fa-compass">&nbsp;</i><%= patch.address%></h4>
-          <div class="patch-links">
-            <%= link_to "Delete", patch_path(patch), method: :delete, class: "patches-link" %>
+<!-- this will be an oops there's nothing here message -->
+    <p id="empty-patch-text">Oops, there's nothing here! Add a patch.</p>
+    <img id="empty-patch" src="<%= asset_url('empty.png') %>" alt="">
+
+
+  <% else %>
+      <% @patches.each do |patch|  %>
+      <div class="card-patch hvr-grow">
+        <div class="card-trip-infos">
+          <div class="card-image"></div>
+          <div class="green-strip"></div>
+          <div class="textpatch">
+            <h2> <%= link_to patch.name, patch_path(patch), class: "patches-link" %> </h2>
+            <h4 class="patches-location"><i class="fas fa-compass">&nbsp;</i><%= patch.address%></h4>
+            <div class="patch-links">
+              <%= link_to "Delete", patch_path(patch), method: :delete, class: "patches-link" %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <% end %>
+
+
     <% end %>
   </div>
 </div>
