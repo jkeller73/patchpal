@@ -124,7 +124,7 @@ array.each do |url|
 end
 
 
-r = User.create!(first_name: 'Robin', last_name: 'Hood', email: 'rhood@gmail.com', password: '123123')
+r = User.create!(first_name: 'Robin', last_name: 'Hood', email: 'hoodrobin@gmail.com', password: '123123')
 a = Patch.create!(name: 'My Autumn Patch', address: 'Acton, England, United Kingdom', user: r)
 5.times { PatchPlant.create!(patch: a, plant: Plant.all.sample)}
 hm = HarvestMonth.where(dec: true).first
