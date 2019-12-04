@@ -1,21 +1,55 @@
-<div class="add-extra-veg-container">
-  <!-- <div class="container">
-    <div class="row">
-      <%# recommended_plants.each do |plant| %>
-        <div class="cards col-sm-4">
-            <div class="card-category" %>)">
-              <h4 id="vg-text"><%#= plant.name.capitalize %></h4>
-              <%#= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch'), remote: true, id: "plus-button", method: :post %>
-            </div>
+<button type="button" class="add-plants-btn" data-toggle="modal" data-target="#exampleModalLong">
+  Add More Plants!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Select the plants you want to add to your patch</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="add-extra-veg-container">
+          <!-- <div class="container">
+            <div class="row">
+              <%# recommended_plants.each do |plant| %>
+                <div class="cards col-sm-4">
+                    <div class="card-category" %>)">
+                      <h4 id="vg-text"><%#= plant.name.capitalize %></h4>
+                      <%#= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch'), remote: true, id: "plus-button", method: :post %>
+                    </div>
+                </div>
+              <%# end %>
+            </div> -->
+            <h2>All plants</h2>
+              <% other_plants.each do |plant| %>
+                <div class="cards col-sm-4">
+                    <h4 id="veg-text"><%= plant.name.capitalize %></h4>
+                    <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch'), remote: true, id: "patch-plus-button", method: :post %>
+                </div>
+              <% end %>
+          </div>
         </div>
-      <%# end %>
-    </div> -->
-    <h2>All plants</h2>
-      <% other_plants.each do |plant| %>
-        <div class="cards col-sm-4">
-            <h4 id="veg-text"><%= plant.name.capitalize %></h4>
-            <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch'), remote: true, id: "patch-plus-button", method: :post %>
-        </div>
-      <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+

@@ -2,40 +2,11 @@
  <%= @patch.name.capitalize %> | Patch Pal
 <% end %>
 
-
-
-<div class="weatherforecast">
-  <h2>This weeks weather</h2>
-  <!-- <table>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <th><%#= day[:date].split(' ').first %></th>
-      <%# end %>
-    </tr>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <td><%#= day[:description] %></td>
-      <%# end %>
-    </tr>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <td><%#= day[:temperature] %>°C</td>
-      <%# end %>
-    </tr>
-  </table> -->
-  <div class="everyday">
-    <% @weekly_forecast.each do |day| %>
-      <ul>
-        <li><h3><%= day[:date].split(' ').first %></h3></li>
-        <li><p><%= day[:description] %></p></li>
-        <li><p><%= day[:temperature] %>°C</p></li>
-      </ul>
-    <% end %>
-  </div>
-
 <div class="titlepatch">
   <h1><span class="highlightme">&nbsp;<%= @patch.name %>&nbsp;</span></h1>
 </div>
+
+
 
 <div class="patch-show-alerts">
   <img class="leaf-avatar-patch-show" alt="avatar" src="<%= asset_url('leaf.png') %>" />
@@ -62,13 +33,43 @@
 
 </div>
 
+<div class="weatherforecast">
+  <h2><span class="highlightme">&nbsp;This week's weather&nbsp;</span></h2>
+  <!-- <table>
+    <tr>
+      <%# @weekly_forecast.each do |day| %>
+        <th><%#= day[:date].split(' ').first %></th>
+      <%# end %>
+    </tr>
+    <tr>
+      <%# @weekly_forecast.each do |day| %>
+        <td><%#= day[:description] %></td>
+      <%# end %>
+    </tr>
+    <tr>
+      <%# @weekly_forecast.each do |day| %>
+        <td><%#= day[:temperature] %>°C</td>
+      <%# end %>
+    </tr>
+  </table> -->
+  <div class="everyday">
+    <% @weekly_forecast.each do |day| %>
+      <ul>
+        <li><h3><%= day[:date].split(' ').first %></h3></li>
+        <li><p><%= day[:description] %></p></li>
+        <li><p><%= day[:temperature] %>°C</p></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
 <div class="patch-showpage-container">
   <h3><span class="highlightme">&nbsp;Your Plants:&nbsp;</span></h3>
+  <%= render 'update_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
   <div class="infopatch">
-
     <div id="patch-plants">
       <%= render 'patch_plants', patch: @patch %>
     </div>
   </div>
 </div>
-<%= render 'update_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
+
