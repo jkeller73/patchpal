@@ -1,6 +1,6 @@
 meta_product_name: "PatchPal"
 meta_title: "PatchPal- Your Guide to Growing"
 meta_description: "A website for amateur gardeners looking to learn more about growing vegetable patches"
-meta_image: "wateringcan.png" # should exist in `app/assets/images/`
+meta_image: "veggies.jpg" # should exist in `app/assets/images/`
 twitter_account: "@patchpal-twitter"   # required for Twitter Cardsmeta_product_name: "Product Name"
 

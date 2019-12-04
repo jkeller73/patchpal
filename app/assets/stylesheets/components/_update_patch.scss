@@ -7,6 +7,16 @@
   width: 30px;
 }
 
-.add-extra-veg-container {
-  width: 30vw;
+// .add-extra-veg-container {
+//   width: 30vw;
+//   margin-right: 0;
+// }
+.modal-text {
+  display: flex;
+  justify-content: space-between;
+  h4 {
+    color: $dark-gray;
+  }
 }
+
+

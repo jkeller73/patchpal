@@ -12,16 +12,17 @@ function addPlant(plantHTML) {
   const plants = document.getElementById('veg-results');
   if (plants) {
    plants.insertAdjacentHTML('beforeend', plantHTML);
+
   }
 }
 
 function addButton(buttonHTML) {
-  const plants = document.getElementById('veg-results');
+  const plants = document.getElementById('insertButtonsHere');
   if (plants) {
-    plants.insertAdjacentHTML('beforeend', buttonHTML);
+   plants.insertAdjacentHTML('beforeend', buttonHTML);
+
   }
 }
-
 
 
 // ---- Patch Update Functions: -----
@@ -40,13 +41,15 @@ function addPatchPlant(plantHTML) {
 }
 
 if (<%= @page == 'update_patch' %>) {
-  addPatchPlant(`<div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80)">
+  addPatchPlant(`<div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url(@plant.photo)%>)">
     <li><%= link_to @patch_plant.plant.name.pluralize, patch_plant_path(@plant), class: "index-text" %></li>
+    <li><%= link_to '-', patch_plant_path(@plant, page: "remove patch plant"), id: "minus-button", method: :delete, remote: true %> </li>
   </div>`);
   refreshPatch('<%= j render "patches/update_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
 } else {
   addPlant(`<p id="patch_plant_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
   refreshPage('<%= j render "patches/add_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
+  addButton('<a href="/patches"><button type="button" class="btn btn-success" id="patchBtn">See my patch</button></a>')
 }
 
 

@@ -39,17 +39,29 @@ class Patch < ApplicationRecord
   def week_forecast
     forecast = JSON.parse(open("http://api.openweathermap.org/data/2.5/forecast?lat=#{latitude}&lon=#{longitude}&APPID=#{ENV['WEATHER_API_KEY']}").read)
     days_array = forecast['list']
-    good = [0, 3, 11, 19, 27, 35]
-    good.map do |index|
+    # good = [0, 8, 16, 24, 32, 39]
+    # good = days_array.where()
+    today = false
+    days_array = days_array.map do |day|
       # [
       #   days_array[index]['weather'][0]['description'],
       #   (days_array[index]['main']['temp'] - 273.15).round
       # ]
-      {
-        description: days_array[index]['weather'][0]['description'],
-        temperature: (days_array[index]['main']['temp'] - 273.15).round,
-        date: days_array[index]['dt_txt']
-      }
+      if Time.parse(day['dt_txt']).hour == 12
+        {
+          description: day['weather'][0]['description'],
+          temperature: (day['main']['temp'] - 273.15).round,
+          date: day['dt_txt']
+        }
+      elsif Date.parse(day['dt_txt']) == Date.today && today == false
+        today = true
+        {
+          description: day['weather'][0]['description'],
+          temperature: (day['main']['temp'] - 273.15).round,
+          date: day['dt_txt']
+        }
+      end
     end
+    days_array.reject(&:nil?)
   end
 end

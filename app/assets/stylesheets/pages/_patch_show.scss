@@ -7,7 +7,6 @@
 }
 .infopatch {
   background-color: white;
-
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 3% 2% 3% 2%;
@@ -47,6 +46,7 @@ h1 {
   margin-top: 10px;
   margin-bottom: 10px;
   position: relative;
+  border-radius: 5px;
   p {
     margin: 30px;
     font-family: $headers-font;
@@ -87,6 +87,7 @@ h1 {
   font-weight: bold;
   font-family: $headers-font;
   width: 100%;
+  position: relative;
 }
 
 #patch-plants {
@@ -141,12 +142,9 @@ h1 {
 
 .weatherforecast {
   background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 3% auto;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: 5px;
   padding-bottom: 10px;
   width: 80vw;
   p {
@@ -157,8 +155,13 @@ h1 {
     font-size: 20px;
   }
   h2 {
-    color: #393939;
+    color: white;
     text-align: center;
+    font-size: 30px;
+    padding: 4% 0;
+    .highlightme {
+    background-color: #9ACA8E;
+    }
   }
 }
 
@@ -177,6 +180,27 @@ h1 {
   margin-right: auto;
 }
 
+
+// .alerts-box-container {
+//   padding: 5% 0;
+//   background-color: $green;
+//   width: 60vw;
+// }
+
+.patch-container {
+  background-color: $green;
+  width: 80vw;
+  margin: 5% auto 5% auto ;
+  padding: 5% 0;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  position: relative;
+  h2 {
+    color: white;
+    text-align: center;
+    padding: 0;
+  }
+}
 
 
 

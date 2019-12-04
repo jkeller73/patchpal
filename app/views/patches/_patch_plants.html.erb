@@ -1,6 +1,6 @@
 <% patch.patch_plants.each do |plant| %>
   <div class="allplants" id="delete-patch-plant-<%= plant.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url(plant.plant.photo)%>)">
     <li><%= link_to plant.plant.name.pluralize, patch_plant_path(plant), class: "index-text" %></li>
-    <li><%= link_to '-', patch_plant_path(plant, page: "remove patch plant"), method: :delete, remote: true %> </li>
+    <li><%= link_to '-', patch_plant_path(plant, page: "remove patch plant"), id: "minus-button", method: :delete, remote: true %> </li>
   </div>
 <% end %>
