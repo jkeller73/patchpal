@@ -40,7 +40,7 @@ h5 {
   } h1 {
     margin-bottom: 2%;
   } h3 {
-    padding-bottom: 0 0 20px;
+    margin-bottom: 25px;
   }
 }
 
@@ -52,15 +52,20 @@ h5 {
 .inspire-container {
   background-color: #FBFBFB;
   height: 30em;
-  padding-right: 4em;
+  // padding-right: 4em;
   position: relative;
-  text-align: right;
+  // text-align: right;
   flex-direction: column;
   padding-top: 10%;
-  padding-right: 5%;
+  max-width: 100vw;
+  overflow: hidden;
+  // padding-right: 5%;
   .inspire-text {
-    float: right;
+    // float: right;
     text-align: right;
+    position: absolute;
+    right: 5vw;
+    top: 35vh;
   }
   h2 {
     padding-left: 0px;
@@ -77,12 +82,14 @@ h5 {
     font-size: 370px;
   }
   .inspire-header {
-    width: 25%;
+    // width: 20vw;
     text-align: right;
-    float: right;
-    justify-content: right;
-    margin-right: 0;
-    margin-left: 75%;
+    // float: right;
+    // justify-content: right;
+    position: absolute;
+    right: 5vw;
+    // margin-right: 0;
+    // margin-left: 75%;
   }
   .highlightme {
     background-color: rgb(158, 201, 139);
@@ -97,6 +104,7 @@ h5 {
   h2 {
     // background-image: linear-gradient(to bottom, rgb(232, 247, 225), rgb(232, 247, 225));
     color: $green;
+    margin-bottom: 5vh;
   }
   h5 {
     color: white;
@@ -108,6 +116,14 @@ h5 {
   .highlightme {
     background-color: rgb(232, 247, 225);
   }
+
+  .fa-book-open {
+  position: absolute;
+  bottom: -155vh;
+  right: 150px;
+  color: #FFC800;
+  font-size: 370px;
+  }
 }
 
 
@@ -115,12 +131,12 @@ h5 {
 .track-container {
   height: 30em;
   background-color: $yellow;
-  padding-right: 4em;
+  // padding-right: 4em;
   position: relative;
   text-align: right;
   flex-direction: column;
   padding-top: 10%;
-  padding-right: 5%;
+  // padding-right: 5%;
   h2 {
     color: $green;
   }
@@ -128,8 +144,18 @@ h5 {
     color: white;
   }
   .track-header {
-    width: 25%;
-    margin-left: 75%;
+    // width: 25%;
+    // margin-left: 75%;
+    position: absolute;
+    right: 5vw;
+  }
+
+  .track-text {
+    text-align: right;
+    position: absolute;
+    right: 5vw;
+    top: 35vh;
+
   }
   .fa-calendar-check {
     position: absolute;
