@@ -97,6 +97,7 @@ h5 {
 }
 
 .time-container {
+  position: relative;
     height: 30em;
     background-color: $green;
     padding-top: 10%;
@@ -119,8 +120,8 @@ h5 {
 
   .fa-book-open {
   position: absolute;
-  bottom: -155vh;
-  right: 150px;
+  bottom: 5%;
+  right: 5vw;
   color: #FFC800;
   font-size: 370px;
   }
