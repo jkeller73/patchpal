@@ -2,27 +2,39 @@
  <%= @patch.name.capitalize %> | Patch Pal
 <% end %>
 
+<div class="titlepatch">
+  <h1><span class="highlightme">&nbsp;<%= @patch.name %>&nbsp;</span></h1>
+</div>
 
+<div class="alerts-box-container">
+  <div class="patch-show-alerts">
+    <img class="leaf-avatar-patch-show" alt="avatar" src="<%= asset_url('leaf.png') %>" />
+    <div class="co-patch-show"></div>
+    <h3><span class="highlightme">&nbsp;Patch Alerts&nbsp;</span></h3>
+    <% @alerts.each do |alert| %>
+      <div class="planting-alerts">
+        <p><%= alert.message %></p>
+        <% if alert.type_of_alert == 'harvest' %>
+          <%= link_to '<button type="button" class="bti btn-success">Harvest</button>'.html_safe, complete_alert_path(alert), method: :patch %>
+        <% elsif alert.type_of_alert == 'sowing' %>
+          <%= link_to '<button type="button" class="bti btn-success">Sow</button>'.html_safe, complete_alert_path(alert), method: :patch %>
+        <% end %>
+      </div>
+    <% end %>
+
+
+    <% @weather_alerts.each do |w_alert| %>
+      <div class="weather-alerts">
+        <p><%= w_alert.message %></p>
+        <%= link_to '<button type="button" class="bti btn-success">Water</button>'.html_safe, complete_weather_alert_path(w_alert), method: :patch %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <div class="weatherforecast">
-  <h2>This weeks weather</h2>
-  <!-- <table>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <th><%#= day[:date].split(' ').first %></th>
-      <%# end %>
-    </tr>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <td><%#= day[:description] %></td>
-      <%# end %>
-    </tr>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <td><%#= day[:temperature] %>°C</td>
-      <%# end %>
-    </tr>
-  </table> -->
+  <h2><span class="highlightme">&nbsp;This week's weather&nbsp;</span></h2>
+
   <div class="everyday">
     <% @weekly_forecast.each do |day| %>
       <ul>
@@ -32,43 +44,24 @@
       </ul>
     <% end %>
   </div>
-
-<div class="titlepatch">
-  <h1><span class="highlightme">&nbsp;<%= @patch.name %>&nbsp;</span></h1>
 </div>
 
-<div class="patch-show-alerts">
-  <img class="leaf-avatar-patch-show" alt="avatar" src="<%= asset_url('leaf.png') %>" />
-  <div class="co-patch-show"></div>
-  <h3><span class="highlightme">&nbsp;Patch Alerts&nbsp;</span></h3>
-  <% @alerts.each do |alert| %>
-    <div class="planting-alerts">
-      <p><%= alert.message %></p>
-      <% if alert.type_of_alert == 'harvest' %>
-        <%= link_to '<button type="button" class="bti btn-success">Harvest</button>'.html_safe, complete_alert_path(alert), method: :patch %>
-      <% elsif alert.type_of_alert == 'sowing' %>
-        <%= link_to '<button type="button" class="bti btn-success">Sow</button>'.html_safe, complete_alert_path(alert), method: :patch %>
-      <% end %>
-    </div>
-  <% end %>
 
+  <!-- <h3><span class="highlightme">&nbsp;Your Plants:&nbsp;</span></h3> -->
 
-  <% @weather_alerts.each do |w_alert| %>
-    <div class="weather-alerts">
-      <p><%= w_alert.message %></p>
-      <%= link_to '<button type="button" class="bti btn-success">Water</button>'.html_safe, complete_weather_alert_path(w_alert), method: :patch %>
-    </div>
-  <% end %>
-
-</div>
-
-<div class="patch-showpage-container">
-  <h3><span class="highlightme">&nbsp;Your Plants:&nbsp;</span></h3>
+  <%= render 'update_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
+<div class="patch-container">
+  <div class="add-plant-btn-container">
+    <button type="button" class="add-plants-btn" data-toggle="modal" data-target="#exampleModalLong">
+      Add More Plants!
+    </button>
+  </div>
+  <h2>Your Patch</h2>
   <div class="infopatch">
-
     <div id="patch-plants">
       <%= render 'patch_plants', patch: @patch %>
     </div>
   </div>
 </div>
-<%= render 'update_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
+
+
