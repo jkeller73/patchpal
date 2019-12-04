@@ -9,7 +9,6 @@ class PatchesController < ApplicationController
 
   def show
     # update_weather
-    create_alerts
     @weekly_forecast = @patch.week_forecast
     @alerts = @patch.alerts.where(completed: false)
     @weather_alerts = @patch.weather_alerts.where(completed: false)
@@ -62,6 +61,7 @@ class PatchesController < ApplicationController
   def create_alerts
     @patch.patch_plants.each(&:check_patch_plant_harvest)
     @patch.patch_plants.each(&:check_patch_plant_sowing)
+    @patch.update_weather
     @patch.check_weather
   end
 
