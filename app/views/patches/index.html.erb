@@ -5,8 +5,12 @@
   </div>
   <div class="green-strip"></div>
   <div class="wrapper-avatar">
-    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-  </div>
+    <% if current_user.avatar.attached? %>
+      <img class="avatar-large" alt="avatar-large" <%= cl_image_tag current_user.avatar.key %> />
+    <% else  %>
+      <img class="avatar-large" alt="avatar-large" <%= image_tag asset_url('apple.png')%> />
+    <% end %>
+ </div>
   <div class="header-container">
     <h2 class="patchlist"> YOUR PATCHES:</h2>
   </div>
