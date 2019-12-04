@@ -6,31 +6,30 @@
   <h1><span class="highlightme">&nbsp;<%= @patch.name %>&nbsp;</span></h1>
 </div>
 
+<div class="alerts-box-container">
+  <div class="patch-show-alerts">
+    <img class="leaf-avatar-patch-show" alt="avatar" src="<%= asset_url('leaf.png') %>" />
+    <div class="co-patch-show"></div>
+    <h3><span class="highlightme">&nbsp;Patch Alerts&nbsp;</span></h3>
+    <% @alerts.each do |alert| %>
+      <div class="planting-alerts">
+        <p><%= alert.message %></p>
+        <% if alert.type_of_alert == 'harvest' %>
+          <%= link_to '<button type="button" class="bti btn-success">Harvest</button>'.html_safe, complete_alert_path(alert), method: :patch %>
+        <% elsif alert.type_of_alert == 'sowing' %>
+          <%= link_to '<button type="button" class="bti btn-success">Sow</button>'.html_safe, complete_alert_path(alert), method: :patch %>
+        <% end %>
+      </div>
+    <% end %>
 
 
-<div class="patch-show-alerts">
-  <img class="leaf-avatar-patch-show" alt="avatar" src="<%= asset_url('leaf.png') %>" />
-  <div class="co-patch-show"></div>
-  <h3><span class="highlightme">&nbsp;Patch Alerts&nbsp;</span></h3>
-  <% @alerts.each do |alert| %>
-    <div class="planting-alerts">
-      <p><%= alert.message %></p>
-      <% if alert.type_of_alert == 'harvest' %>
-        <%= link_to '<button type="button" class="bti btn-success">Harvest</button>'.html_safe, complete_alert_path(alert), method: :patch %>
-      <% elsif alert.type_of_alert == 'sowing' %>
-        <%= link_to '<button type="button" class="bti btn-success">Sow</button>'.html_safe, complete_alert_path(alert), method: :patch %>
-      <% end %>
-    </div>
-  <% end %>
-
-
-  <% @weather_alerts.each do |w_alert| %>
-    <div class="weather-alerts">
-      <p><%= w_alert.message %></p>
-      <%= link_to '<button type="button" class="bti btn-success">Water</button>'.html_safe, complete_weather_alert_path(w_alert), method: :patch %>
-    </div>
-  <% end %>
-
+    <% @weather_alerts.each do |w_alert| %>
+      <div class="weather-alerts">
+        <p><%= w_alert.message %></p>
+        <%= link_to '<button type="button" class="bti btn-success">Water</button>'.html_safe, complete_weather_alert_path(w_alert), method: :patch %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div class="weatherforecast">
