@@ -41,8 +41,9 @@ function addPatchPlant(plantHTML) {
 }
 
 if (<%= @page == 'update_patch' %>) {
-  addPatchPlant(`<div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1488459716)">
+  addPatchPlant(`<div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url(@plant.photo)%>)">
     <li><%= link_to @patch_plant.plant.name.pluralize, patch_plant_path(@plant), class: "index-text" %></li>
+    <li><%= link_to '-', patch_plant_path(@plant, page: "remove patch plant"), id: "minus-button", method: :delete, remote: true %> </li>
   </div>`);
   refreshPatch('<%= j render "patches/update_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
 } else {
