@@ -40,7 +40,7 @@
 <div class="patch-show-alerts">
   <img class="leaf-avatar-patch-show" alt="avatar" src="<%= asset_url('leaf.png') %>" />
   <div class="co-patch-show"></div>
-  <h3><span class="highlightme">&nbsp;Patch Alerts&nbsp;</span></h3>
+  <h3 id="highlightme-h3"><span class="highlightme">&nbsp;Patch Alerts&nbsp;</span></h3>
   <% @alerts.each do |alert| %>
     <div class="planting-alerts">
       <p><%= alert.message %></p>

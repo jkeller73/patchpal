@@ -15,6 +15,13 @@ function addPlant(plantHTML) {
   }
 }
 
+function addButton(buttonHTML) {
+  const plants = document.getElementById('veg-results');
+  if (plants) {
+    plants.insertAdjacentHTML('beforeend', buttonHTML);
+  }
+}
+
 
 
 // ---- Patch Update Functions: -----
