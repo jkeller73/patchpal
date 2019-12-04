@@ -13,6 +13,7 @@ class PatchPlantsController < ApplicationController
     @patch_plant = PatchPlant.new
     @patch_plant.plant = @plant
     @patch_plant.patch = @patch
+    @button_id = params[:button]
     @page = params[:page]
     authorize @patch_plant
     if @patch_plant.save
