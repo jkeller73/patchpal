@@ -57,17 +57,17 @@ ActiveRecord::Schema.define(version: 2019_12_03_093925) do
   end
 
   create_table "harvest_months", force: :cascade do |t|
-    t.boolean "jan"
-    t.boolean "feb"
-    t.boolean "mar"
-    t.boolean "apr"
-    t.boolean "may"
-    t.boolean "jun"
-    t.boolean "jul"
-    t.boolean "aug"
-    t.boolean "oct"
-    t.boolean "nov"
-    t.boolean "dec"
+    t.boolean "jan", default: false
+    t.boolean "feb", default: false
+    t.boolean "mar", default: false
+    t.boolean "apr", default: false
+    t.boolean "may", default: false
+    t.boolean "jun", default: false
+    t.boolean "jul", default: false
+    t.boolean "aug", default: false
+    t.boolean "oct", default: false
+    t.boolean "nov", default: false
+    t.boolean "dec", default: false
     t.bigint "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -111,17 +111,17 @@ ActiveRecord::Schema.define(version: 2019_12_03_093925) do
   end
 
   create_table "sowing_months", force: :cascade do |t|
-    t.boolean "jan"
-    t.boolean "feb"
-    t.boolean "mar"
-    t.boolean "apr"
-    t.boolean "may"
-    t.boolean "jun"
-    t.boolean "jul"
-    t.boolean "aug"
-    t.boolean "oct"
-    t.boolean "nov"
-    t.boolean "dec"
+    t.boolean "jan", default: false
+    t.boolean "feb", default: false
+    t.boolean "mar", default: false
+    t.boolean "apr", default: false
+    t.boolean "may", default: false
+    t.boolean "jun", default: false
+    t.boolean "jul", default: false
+    t.boolean "aug", default: false
+    t.boolean "oct", default: false
+    t.boolean "nov", default: false
+    t.boolean "dec", default: false
     t.bigint "plant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
