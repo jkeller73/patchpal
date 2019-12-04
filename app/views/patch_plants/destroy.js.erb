@@ -4,6 +4,12 @@ function removePlant() {
   plant.remove();
 }
 
+function removeButton() {
+  // console.log('hello')
+  const button = document.getElementById('patchBtn');
+  button.remove();
+}
+
 // --- removing plants from the patch show page: ---- //
 
 function removePatchPlant() {
@@ -15,4 +21,5 @@ if (<%= @page == 'remove patch plant' %>) {
   removePatchPlant();
 } else {
   removePlant();
+  removeButton()
 }

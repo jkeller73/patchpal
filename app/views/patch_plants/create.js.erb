@@ -12,9 +12,17 @@ function addPlant(plantHTML) {
   const plants = document.getElementById('veg-results');
   if (plants) {
    plants.insertAdjacentHTML('beforeend', plantHTML);
+
   }
 }
 
+function addButton(buttonHTML) {
+  const plants = document.getElementById('insertButtonsHere');
+  if (plants) {
+   plants.insertAdjacentHTML('beforeend', buttonHTML);
+
+  }
+}
 
 
 // ---- Patch Update Functions: -----
@@ -40,6 +48,7 @@ if (<%= @page == 'update_patch' %>) {
 } else {
   addPlant(`<p id="patch_plant_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
   refreshPage('<%= j render "patches/add_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
+  addButton('<a href="/patches"><button type="button" class="btn btn-success" id="patchBtn">See my patch</button></a>')
 }
 
 
