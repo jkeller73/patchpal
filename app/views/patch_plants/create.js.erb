@@ -40,12 +40,18 @@ function addPatchPlant(plantHTML) {
   }
 }
 
+function removePatchPlant() {
+  const patchPlant = document.getElementById('patch-plus-button<%= @button_id %>');
+   patchPlant.remove();
+}
+
 if (<%= @page == 'update_patch' %>) {
   addPatchPlant(`<div class="allplants" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_url(@plant.photo)%>)">
     <li><%= link_to @patch_plant.plant.name.pluralize, patch_plant_path(@plant), class: "index-text" %></li>
     <li><%= link_to '-', patch_plant_path(@plant, page: "remove patch plant"), id: "minus-button", method: :delete, remote: true %> </li>
   </div>`);
   refreshPatch('<%= j render "patches/update_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
+  removePatchPlant();
 } else {
   addPlant(`<p id="patch_plant_<%= @patch_plant.id %>" ><%= @plant.name.capitalize %> <%= link_to "-", patch_plant_path(PatchPlant.where(plant: @plant, patch: @patch).first), method: :delete, remote: true %>  </p>`);
   refreshPage('<%= j render "patches/add_patch_plant", other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>');
