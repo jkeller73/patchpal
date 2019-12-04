@@ -35,23 +35,7 @@
 
 <div class="weatherforecast">
   <h2><span class="highlightme">&nbsp;This week's weather&nbsp;</span></h2>
-  <!-- <table>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <th><%#= day[:date].split(' ').first %></th>
-      <%# end %>
-    </tr>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <td><%#= day[:description] %></td>
-      <%# end %>
-    </tr>
-    <tr>
-      <%# @weekly_forecast.each do |day| %>
-        <td><%#= day[:temperature] %>°C</td>
-      <%# end %>
-    </tr>
-  </table> -->
+
   <div class="everyday">
     <% @weekly_forecast.each do |day| %>
       <ul>
@@ -63,13 +47,13 @@
   </div>
 </div>
 
-<div class="patch-showpage-container">
-  <h3><span class="highlightme">&nbsp;Your Plants:&nbsp;</span></h3>
+
+  <!-- <h3><span class="highlightme">&nbsp;Your Plants:&nbsp;</span></h3> -->
   <%= render 'update_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
   <div class="infopatch">
     <div id="patch-plants">
       <%= render 'patch_plants', patch: @patch %>
     </div>
   </div>
-</div>
+
 
