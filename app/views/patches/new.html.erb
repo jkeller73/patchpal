@@ -14,7 +14,7 @@
       </div>
       <%= simple_form_for(@patch) do |f| %>
         <%= f.input :name %>
-        <%= f.input :address %>
+        <%= f.input :address, placeholder: 'Enter your patch location' %>
         <%= f.button :submit, "Create!", class: "form-actions btn-flat"%>
       <% end %>
     </div>

@@ -28,7 +28,7 @@ class Patch < ApplicationRecord
     end
 
     if weather_alerts.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day).empty?
-      if day_weather.all? != /\w+?|rain|\w+?/
+      if !day_weather.any? { |day| day.include?("rain") }
         WeatherAlert.create(type_of_alert: 'water', message: 'You should water your plants', patch: self)
       else
         puts 'it has rained'

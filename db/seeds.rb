@@ -124,11 +124,14 @@ array.each do |url|
 end
 
 
-u = User.create!(first_name: 'Juliette', last_name: 'Keller', email: 'juliette@gmail.com', password: '123123')
-pat = Patch.create!(name: 'patchy', address: 'SE5 9EF', user: u)
-10.times { PatchPlant.create!(patch: pat, plant: Plant.all.sample)}
-hm = HarvestMonth.where(nov: true).first
-PatchPlant.create!(patch: pat, plant: hm.plant)
+r = User.create!(first_name: 'Robin', last_name: 'Hood', email: 'rhood@gmail.com', password: '123123')
+a = Patch.create!(name: 'My Autumn Patch', address: 'Acton, England, United Kingdom', user: r)
+5.times { PatchPlant.create!(patch: a, plant: Plant.all.sample)}
+hm = HarvestMonth.where(dec: true).first
+PatchPlant.create!(patch: a, plant: hm.plant, plant_date: 31.weeks.ago)
+sm = SowingMonth.where(dec: true).first
+PatchPlant.create!(patch: a, plant: sm.plant)
+
 
 # DailyWeatherReport.create!(date: 3.days.ago, description: 'sunny', temperature: 10.4, patch: pat)
 # DailyWeatherReport.create!(date: 2.days.ago, description: 'clouds', temperature: 9.34, patch: pat)
