@@ -17,11 +17,15 @@
       <h5 style="margin-bottom: 8px;"><%= @patch.name %> Patch</h5>
         <%= render 'remove_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
     </div>
-    <% if @patch.plants != [] %>
-      <%= link_to '<button type="button" class="btn btn-success" id="patchBtn">See my patch</button>'.html_safe, patches_path %>
-    <% else %>
-      <%= link_to '<button type="button" class="btn btn-success d-none" id="patchBtn">See my patch</button>'.html_safe, patches_path %>
-    <% end %>
+
+    <div class="myclass">
+      <%= render 'remove_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
+    <%= link_to '<button type="button" class="addbtn btn-success" id="patchBtn">See my patch</button>'.html_safe, patches_path, class: "addbtn" %>
+</div>
+    <%# if @patch.plants != [] %>
+    <%# else %>
+      <%#= link_to '<button type="button" class="btn btn-success d-none" id="patchBtn">See my patch</button>'.html_safe, patches_path %>
+    <%# end %>
   </div>
   <img src="<%= asset_url('man.png') %>" alt="" id="man">
   <img src="<%= asset_url('meadowbig2.png') %>" alt="" id="meadow">

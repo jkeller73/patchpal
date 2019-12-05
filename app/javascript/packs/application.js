@@ -13,15 +13,16 @@ if (document.querySelector('#patch_address')) {
 }
 
 
-initSweetalert('#sweet-alert-sow', {
+initSweetalert('#sow-button', {
   title: "Nice One!",
   text: "You've sowed your seeds, we'll remind you when to water them and when they're ready to harvest!",
   icon: "success"
 }, (value) => {
+  console.log(value);
   document.getElementById('sow-button-hidden').click();
 });
 
-initSweetalertWater('#sweet-alert-water', {
+initSweetalertWater('#water-button', {
   title: "Nice One!",
   text: "Well done - you have watered your plants. We'll track the weather for you and remind you if you need to water them again!",
   icon: "success"
@@ -30,7 +31,7 @@ initSweetalertWater('#sweet-alert-water', {
   document.getElementById('water-button-hidden').click();
 });
 
-initSweetalertWater('#sweet-alert-harvest', {
+initSweetalertWater('#harvest-button', {
   title: "Nice One!",
   text: "Well done - you have watered your plants. We'll track the weather for you and remind you if you need to water them again!",
   icon: "success"

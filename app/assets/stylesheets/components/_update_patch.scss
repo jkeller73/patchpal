@@ -1,5 +1,6 @@
-#patch-plus-button {
-  background-color: #75CD4E;
+.modal-add-button {
+  -webkit-appearance: none;
+  background-color: $green !important;
   border: none;
   border-radius: 2px;
   transition: 0.3s;
@@ -7,10 +8,7 @@
   width: 30px;
 }
 
-// .add-extra-veg-container {
-//   width: 30vw;
-//   margin-right: 0;
-// }
+
 .modal-text {
   display: flex;
   justify-content: space-between;
