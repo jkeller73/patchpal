@@ -18,7 +18,7 @@
   <% if @patches.length == 0 %>
 
 <!-- this will be an oops there's nothing here message -->
-    <p id="empty-patch-text">Oops, there's nothing here! Add a patch.</p>
+    <p id="empty-patch-text">Oops, there's nothing here! <%= link_to "Add a patch.", new_patch_path %></p>
     <img id="empty-patch" src="<%= asset_url('empty.png') %>" alt="">
 
 

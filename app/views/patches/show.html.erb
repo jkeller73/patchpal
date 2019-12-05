@@ -58,6 +58,7 @@
   <div class="everyday">
     <% @weekly_forecast.each do |day| %>
       <ul>
+
         <li><h3><%= Date.parse(day[:date].split(' ').first).strftime("%a, %d %b") %></h3></li>
         <li><p><%= day[:description] %></p></li>
         <li><p><%= day[:temperature] %>°C</p></li>

@@ -14,7 +14,8 @@
     <div class="rel">
       <img class="leaf-avatar" alt="avatar" src="<%= asset_url('leaf.png') %>" />
       <div class="leaf-avatar co"></div>
-      <h5><%= @patch.name %> Patch</h5>
+      <h5 style="margin-bottom: 8px;"><%= @patch.name %> Patch</h5>
+        <%= render 'remove_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
     </div>
 
     <div class="myclass">
