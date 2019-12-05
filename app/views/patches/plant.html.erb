@@ -20,7 +20,7 @@
 
     <div class="myclass">
       <%= render 'remove_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
-    <%= link_to '<button type="button" class="addbtn btn-success" id="patchBtn">See my patch</button>'.html_safe, patches_path, class: "addbtn" %>
+    <%= link_to '<button type="button" class="addbtn btn-success" id="patchBtn">See my patch</button>'.html_safe, patch_path, class: "addbtn" %>
 </div>
     <%# if @patch.plants != [] %>
     <%# else %>
