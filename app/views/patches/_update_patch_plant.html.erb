@@ -27,7 +27,7 @@
               <% other_plants.each do |plant| %>
                 <div class="cards modal-text">
                     <h4 id="veg-text"><%= plant.name.capitalize %></h4>
-                    <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch', button: "#{plant.id}"), remote: true, id: "patch-plus-button#{plant.id}", method: :post %>
+                    <%= button_to "+", patch_patch_plants_path(patch, patch_plant: { plant: plant }, page: 'update_patch', button: "#{plant.id}"), remote: true, class: "modal-add-button", id: "patch-plus-button#{plant.id}", method: :post %>
                 </div>
               <% end %>
           </div>
