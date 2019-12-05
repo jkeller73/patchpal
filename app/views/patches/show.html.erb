@@ -43,7 +43,7 @@
 </div>
 
 <div class="weatherforecast">
-  <h2><span class="highlightme">&nbsp;This week's weather&nbsp;</span></h2>
+  <h2><img id="sun" src="<%= asset_url('sun.png') %>" alt=""><span class="highlightme" style="margin-right: 10px; margin-left: 10px;">&nbsp;This week's weather&nbsp;</span><img id="rain" src="<%= asset_url('rain.png') %>" alt=""></h2>
 
   <div class="everyday">
     <% @weekly_forecast.each do |day| %>
@@ -61,9 +61,7 @@
   <%= render 'update_patch_plant',other_plants: @other_plants, patch: @patch, recommended_plants: @recommended_plants %>
 <div class="patch-container">
   <div class="add-plant-btn-container">
-    <button type="button" class="add-plants-btn" data-toggle="modal" data-target="#exampleModalLong">
-      Add More Plants!
-    </button>
+    <button type="button" class="add-plants-btn" data-toggle="modal" data-target="#exampleModalLong">Add Plants!</button>
   </div>
   <h2>Your Patch</h2>
   <div class="infopatch">
