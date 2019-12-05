@@ -13,20 +13,25 @@
     <h3><span class="highlightme">&nbsp;Patch Alerts&nbsp;</span></h3>
     <% @alerts.each do |alert| %>
       <div class="planting-alerts">
-        <p><%= alert.message %></p>
+        <div class="alert-text">
+          <p><%= alert.message %></p>
+        </div>
+
         <% if alert.type_of_alert == 'harvest' %>
-          <%= link_to '<button type="button" class="bti btn-success" id="harvest-button">Harvest</button>'.html_safe, complete_alert_path(alert), method: :patch %>
+          <button type="button" id="harvest-button" class="bti btn-success">Harvest</button>
+          <%= link_to '<button type="button" class="bti btn-success" id="harvest-button-hidden">Harvest</button>'.html_safe, complete_alert_path(alert), method: :patch %>
         <% elsif alert.type_of_alert == 'sowing' %>
-          <%= link_to '<button type="button" class="bti btn-success" id="sow-button">Sow</button>'.html_safe, complete_alert_path(alert), method: :patch %>
+          <button type="button" id="sow-button" class="bti btn-success">Sow</button>
+          <%= link_to '<button type="button" class="bti btn-success d-none" id="sow-button-hidden">Sow</button>'.html_safe, complete_alert_path(alert), method: :patch %>
         <% end %>
       </div>
     <% end %>
 
-
     <% @weather_alerts.each do |w_alert| %>
       <div class="weather-alerts">
         <p><%= w_alert.message %></p>
-        <%= link_to '<button type="button" class="bti btn-success" id="water-button">Water</button>'.html_safe, complete_weather_alert_path(w_alert), method: :patch %>
+        <button type="button" id="water-button" class="bti btn-success">Water</button>
+        <%= link_to '<button type="button" class="bti btn-success d-none" id="water-button-hidden">Water</button>'.html_safe, complete_weather_alert_path(w_alert), method: :patch %>
       </div>
     <% end %>
   </div>
