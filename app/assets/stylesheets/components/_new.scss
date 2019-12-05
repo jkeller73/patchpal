@@ -213,3 +213,29 @@ body {
   z-index: -1;
 }
 
+
+.addbtn {
+  position: absolute;
+  bottom: 0;
+  margin: 8px auto;
+  left: 0;
+  right: 0;
+  width: 90%;
+}
+
+
+.myclass {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: normal;    position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  padding-top: 8vh;
+}
+
+
+

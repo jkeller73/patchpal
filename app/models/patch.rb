@@ -48,6 +48,7 @@ class Patch < ApplicationRecord
       #   (days_array[index]['main']['temp'] - 273.15).round
       # ]
       if Time.parse(day['dt_txt']).hour == 12
+        today = true if Date.parse(day['dt_txt']) == Date.today
         {
           description: day['weather'][0]['description'],
           temperature: (day['main']['temp'] - 273.15).round,
