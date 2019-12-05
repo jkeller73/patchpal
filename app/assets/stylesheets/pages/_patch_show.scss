@@ -67,12 +67,14 @@ h1 {
 
 .weather-alerts {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-right: 10%;
 }
 
 .planting-alerts {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-right: 10%;
 }
 
 .allplants {
@@ -96,7 +98,6 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  // margin: auto;
   margin-left: 20px;
   margin-right: 20px;
 }
