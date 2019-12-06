@@ -15,7 +15,7 @@
     <% if @patch_plant.plant_date == nil %>
       <p><%= "You haven't planted your #{@patch_plant.plant.name.pluralize} yet!"  %></p>
     <% else %>
-      <p><%= @patch_plant.plant_date %></p>
+      <p><%= @patch_plant.plant_date.strftime("%a, %d %b") %></p>
     <% end %>
 
     <% if @patch_plant.plant_date == nil %>
@@ -24,7 +24,7 @@
       <p><%= "Check back soon to see when you should harvest your #{@patch_plant.plant.name.pluralize}!" %></p>
     <% else %>
       <h5>When you harvested it:</h5>
-      <p><%= @patch_plant.harvest_date %></p>
+      <p><%= @patch_plant.harvest_date.strftime("%a, %d %b") %></p>
     <% end %>
   </div>
   <div class="patch-plant-table-container">
